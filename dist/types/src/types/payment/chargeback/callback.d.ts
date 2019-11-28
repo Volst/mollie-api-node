@@ -1,0 +1,10 @@
+import { IChargeback } from '../../chargeback';
+import { IList } from '../../list';
+/**
+ * @deprecated since 3.0.0 - All callbacks will be removed in a future version
+ */
+export declare type GetCallback = (error: any, chargeback?: IChargeback) => void;
+/**
+ * @deprecated since 3.0.0 - All callbacks will be removed in a future version
+ */
+export declare type ListCallback = (error: any, chargebacks?: IList<IChargeback>) => void;
