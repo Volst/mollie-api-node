@@ -54,7 +54,7 @@ import { ICreateOrderLine } from './line';
 export interface ICreateParams {
     amount: IAmount;
     orderNumber: string;
-    lines: Array<ICreateOrderLine>;
+    lines: ICreateOrderLine[];
     billingAddress: IOrderAddress;
     shippingAddress?: IOrderAddress;
     consumerDateOfBirth?: string;
@@ -64,7 +64,7 @@ export interface ICreateParams {
     method: PaymentMethod;
     payment?: Partial<IPayment>;
     metadata?: any;
-    embed?: Array<OrderEmbed>;
+    embed?: OrderEmbed[];
     profileId?: string;
     testmode?: boolean;
 }
@@ -82,7 +82,7 @@ export interface ICreateParams {
  */
 export interface IGetParams {
     testmode?: boolean;
-    embed?: Array<OrderEmbed>;
+    embed?: OrderEmbed[];
 }
 /**
  * List Orders parameters.

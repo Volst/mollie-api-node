@@ -133,8 +133,8 @@ export interface IPayment {
     _links: IPaymentLinks;
     details?: IDetails;
     _embedded?: {
-        refunds?: Array<IRefund>;
-        chargebacks?: Array<IChargeback>;
+        refunds?: IRefund[];
+        chargebacks?: IChargeback[];
     };
 }
 /**
@@ -329,7 +329,7 @@ export interface ICreditCardDetails {
  */
 export interface IGiftCardDetails {
     voucherNumber: string;
-    giftcards: Array<IGiftCard>;
+    giftcards: IGiftCard[];
     remainderAmount: IAmount;
     remainderMethod: IAmount;
 }

@@ -15,7 +15,7 @@ import { IShipmentTracking, ICreateShipmentOrderLine } from '../shipment';
  */
 export interface ICreateParams {
     orderId: string;
-    lines: Array<ICreateShipmentOrderLine>;
+    lines: ICreateShipmentOrderLine[];
     tracking?: IShipmentTracking;
     testmode?: boolean;
 }

@@ -44,6 +44,6 @@ export interface IUpdateParams {
  */
 export interface ICancelParams {
     orderId: string;
-    lines: Array<ICancelOrderLine>;
+    lines: ICancelOrderLine[];
     testmode?: boolean;
 }

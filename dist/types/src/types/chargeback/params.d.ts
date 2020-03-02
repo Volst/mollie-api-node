@@ -14,5 +14,5 @@ import { PaymentChargebackEmbed } from '../payment/chargeback';
 export interface IListParams {
     from?: string;
     limit?: number;
-    embed?: Array<PaymentChargebackEmbed>;
+    embed?: PaymentChargebackEmbed[];
 }

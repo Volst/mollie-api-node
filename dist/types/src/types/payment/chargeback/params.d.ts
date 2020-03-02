@@ -11,7 +11,7 @@ import { PaymentChargebackEmbed } from '../../payment/chargeback';
  */
 export interface IGetParams {
     paymentId: string;
-    embed?: Array<PaymentChargebackEmbed>;
+    embed?: PaymentChargebackEmbed[];
 }
 /**
  * List Chargebacks parameters
@@ -31,5 +31,5 @@ export interface IListParams {
     paymentId: string;
     from?: string;
     limit?: number;
-    embed?: Array<PaymentChargebackEmbed>;
+    embed?: PaymentChargebackEmbed[];
 }

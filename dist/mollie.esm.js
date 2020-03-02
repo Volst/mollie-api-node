@@ -3440,7 +3440,7 @@ dBb9HxEGmpv0
 -----END CERTIFICATE-----
 `;
 
-var version = '3.0.0';
+var version = "3.1.0";
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
   try {
@@ -3459,18 +3459,18 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
 }
 
 function _asyncToGenerator(fn) {
-  return function() {
+  return function () {
     var self = this,
-      args = arguments;
-    return new Promise(function(resolve, reject) {
+        args = arguments;
+    return new Promise(function (resolve, reject) {
       var gen = fn.apply(self, args);
 
       function _next(value) {
-        asyncGeneratorStep(gen, resolve, reject, _next, _throw, 'next', value);
+        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
       }
 
       function _throw(err) {
-        asyncGeneratorStep(gen, resolve, reject, _next, _throw, 'throw', err);
+        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
       }
 
       _next(undefined);
@@ -3484,7 +3484,7 @@ function _defineProperty(obj, key, value) {
       value: value,
       enumerable: true,
       configurable: true,
-      writable: true,
+      writable: true
     });
   } else {
     obj[key] = value;
@@ -3494,21 +3494,19 @@ function _defineProperty(obj, key, value) {
 }
 
 function _extends() {
-  _extends =
-    Object.assign ||
-    function(target) {
-      for (var i = 1; i < arguments.length; i++) {
-        var source = arguments[i];
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
 
-        for (var key in source) {
-          if (Object.prototype.hasOwnProperty.call(source, key)) {
-            target[key] = source[key];
-          }
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
         }
       }
+    }
 
-      return target;
-    };
+    return target;
+  };
 
   return _extends.apply(this, arguments);
 }
@@ -3518,10 +3516,9 @@ function ownKeys(object, enumerableOnly) {
 
   if (Object.getOwnPropertySymbols) {
     var symbols = Object.getOwnPropertySymbols(object);
-    if (enumerableOnly)
-      symbols = symbols.filter(function(sym) {
-        return Object.getOwnPropertyDescriptor(object, sym).enumerable;
-      });
+    if (enumerableOnly) symbols = symbols.filter(function (sym) {
+      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+    });
     keys.push.apply(keys, symbols);
   }
 
@@ -3533,13 +3530,13 @@ function _objectSpread2(target) {
     var source = arguments[i] != null ? arguments[i] : {};
 
     if (i % 2) {
-      ownKeys(source, true).forEach(function(key) {
+      ownKeys(source, true).forEach(function (key) {
         _defineProperty(target, key, source[key]);
       });
     } else if (Object.getOwnPropertyDescriptors) {
       Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
     } else {
-      ownKeys(source).forEach(function(key) {
+      ownKeys(source).forEach(function (key) {
         Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
       });
     }
@@ -3589,11 +3586,11 @@ function _objectWithoutProperties(source, excluded) {
  */
 class Model {
   constructor() {
-    _defineProperty(this, 'id', void 0);
+    _defineProperty(this, "id", void 0);
 
-    _defineProperty(this, 'mode', void 0);
+    _defineProperty(this, "mode", void 0);
 
-    _defineProperty(this, 'resource', void 0);
+    _defineProperty(this, "resource", void 0);
   }
 
   /**
@@ -3605,6 +3602,7 @@ class Model {
   toPlainObject() {
     return toPlainObject(this);
   }
+
 }
 
 /**
@@ -3621,31 +3619,32 @@ class Chargeback extends Model {
   constructor(props) {
     super();
 
-    _defineProperty(this, 'resource', 'chargeback');
+    _defineProperty(this, "resource", 'chargeback');
 
-    _defineProperty(this, 'id', null);
+    _defineProperty(this, "id", null);
 
-    _defineProperty(this, 'amount', null);
+    _defineProperty(this, "amount", null);
 
-    _defineProperty(this, 'settlementAmount', null);
+    _defineProperty(this, "settlementAmount", null);
 
-    _defineProperty(this, 'createdAt', null);
+    _defineProperty(this, "createdAt", null);
 
-    _defineProperty(this, 'reversedAt', null);
+    _defineProperty(this, "reversedAt", null);
 
-    _defineProperty(this, 'paymentId', null);
+    _defineProperty(this, "paymentId", null);
 
-    _defineProperty(this, '_links', {
+    _defineProperty(this, "_links", {
       self: null,
       documentation: null,
-      payment: null,
+      payment: null
     });
 
     Object.assign(this, props);
   }
+
 }
 
-_defineProperty(Chargeback, 'resourcePrefix', 'chb_');
+_defineProperty(Chargeback, "resourcePrefix", 'chb_');
 
 /**
  * Refund statuses
@@ -3658,18 +3657,18 @@ _defineProperty(Chargeback, 'resourcePrefix', 'chb_');
  */
 let RefundStatus;
 
-(function(RefundStatus) {
-  RefundStatus['queued'] = 'queued';
-  RefundStatus['pending'] = 'pending';
-  RefundStatus['processing'] = 'processing';
-  RefundStatus['refunded'] = 'refunded';
-  RefundStatus['failed'] = 'failed';
+(function (RefundStatus) {
+  RefundStatus["queued"] = "queued";
+  RefundStatus["pending"] = "pending";
+  RefundStatus["processing"] = "processing";
+  RefundStatus["refunded"] = "refunded";
+  RefundStatus["failed"] = "failed";
 })(RefundStatus || (RefundStatus = {}));
 
 let RefundEmbed;
 
-(function(RefundEmbed) {
-  RefundEmbed['payment'] = 'payment';
+(function (RefundEmbed) {
+  RefundEmbed["payment"] = "payment";
 })(RefundEmbed || (RefundEmbed = {}));
 
 /**
@@ -3686,38 +3685,38 @@ class Refund extends Model {
   constructor(props) {
     super();
 
-    _defineProperty(this, 'resource', 'refund');
+    _defineProperty(this, "resource", 'refund');
 
-    _defineProperty(this, 'id', null);
+    _defineProperty(this, "id", null);
 
-    _defineProperty(this, 'amount', {
+    _defineProperty(this, "amount", {
       currency: null,
-      value: null,
+      value: null
     });
 
-    _defineProperty(this, 'settlementAmount', null);
+    _defineProperty(this, "settlementAmount", null);
 
-    _defineProperty(this, 'description', null);
+    _defineProperty(this, "description", null);
 
-    _defineProperty(this, 'status', null);
+    _defineProperty(this, "status", null);
 
-    _defineProperty(this, 'createdAt', null);
+    _defineProperty(this, "createdAt", null);
 
-    _defineProperty(this, 'paymentId', null);
+    _defineProperty(this, "paymentId", null);
 
-    _defineProperty(this, '_links', {
+    _defineProperty(this, "_links", {
       payment: null,
       settlement: null,
       order: null,
       self: null,
-      documentation: null,
+      documentation: null
     });
 
-    _defineProperty(this, 'lines', null);
+    _defineProperty(this, "lines", null);
 
-    _defineProperty(this, '_embedded', null);
+    _defineProperty(this, "_embedded", null);
 
-    _defineProperty(this, 'orderId', null);
+    _defineProperty(this, "orderId", null);
 
     Object.assign(this, props);
 
@@ -3740,6 +3739,7 @@ class Refund extends Model {
    * @public ✓ This method is part of the public API
    */
 
+
   isQueued() {
     return this.status === RefundStatus.queued;
   }
@@ -3748,6 +3748,7 @@ class Refund extends Model {
    *
    * @public ✓ This method is part of the public API
    */
+
 
   isPending() {
     return this.status === RefundStatus.pending;
@@ -3759,6 +3760,7 @@ class Refund extends Model {
    * @public ✓ This method is part of the public API
    */
 
+
   isProcessing() {
     return this.status === RefundStatus.processing;
   }
@@ -3767,6 +3769,7 @@ class Refund extends Model {
    *
    * @public ✓ This method is part of the public API
    */
+
 
   isRefunded() {
     return this.status === RefundStatus.refunded;
@@ -3777,12 +3780,14 @@ class Refund extends Model {
    * @public ✓ This method is part of the public API
    */
 
+
   isFailed() {
     return this.status === RefundStatus.failed;
   }
+
 }
 
-_defineProperty(Refund, 'resourcePrefix', 're_');
+_defineProperty(Refund, "resourcePrefix", 're_');
 
 /**
  * Payment Response Object.
@@ -4104,14 +4109,14 @@ _defineProperty(Refund, 'resourcePrefix', 're_');
  */
 let PaymentStatus;
 
-(function(PaymentStatus) {
-  PaymentStatus['open'] = 'open';
-  PaymentStatus['canceled'] = 'canceled';
-  PaymentStatus['pending'] = 'pending';
-  PaymentStatus['authorized'] = 'authorized';
-  PaymentStatus['expired'] = 'expired';
-  PaymentStatus['failed'] = 'failed';
-  PaymentStatus['paid'] = 'paid';
+(function (PaymentStatus) {
+  PaymentStatus["open"] = "open";
+  PaymentStatus["canceled"] = "canceled";
+  PaymentStatus["pending"] = "pending";
+  PaymentStatus["authorized"] = "authorized";
+  PaymentStatus["expired"] = "expired";
+  PaymentStatus["failed"] = "failed";
+  PaymentStatus["paid"] = "paid";
 })(PaymentStatus || (PaymentStatus = {}));
 
 let PaymentEmbed;
@@ -4123,80 +4128,80 @@ let PaymentEmbed;
  * @param voucherNumber - The voucher number, with the last four digits masked. Example: `606436353088147****`
  */
 
-(function(PaymentEmbed) {
-  PaymentEmbed['refunds'] = 'refunds';
-  PaymentEmbed['chargebacks'] = 'chargebacks';
+(function (PaymentEmbed) {
+  PaymentEmbed["refunds"] = "refunds";
+  PaymentEmbed["chargebacks"] = "chargebacks";
 })(PaymentEmbed || (PaymentEmbed = {}));
 
 /* eslint-disable @typescript-eslint/camelcase */
 let Locale;
 
-(function(Locale) {
-  Locale['en_US'] = 'en_US';
-  Locale['nl_NL'] = 'nl_NL';
-  Locale['nl_BE'] = 'nl_BE';
-  Locale['fr_FR'] = 'fr_FR';
-  Locale['fr_BE'] = 'fr_BE';
-  Locale['de_DE'] = 'de_DE';
-  Locale['de_AT'] = 'de_AT';
-  Locale['de_CH'] = 'de_CH';
-  Locale['es_ES'] = 'es_ES';
-  Locale['ca_ES'] = 'ca_ES';
-  Locale['pt_PT'] = 'pt_PT';
-  Locale['it_IT'] = 'it_IT';
-  Locale['nb_NO'] = 'nb_NO';
-  Locale['sv_SE'] = 'sv_SE';
-  Locale['fi_FI'] = 'fi_FI';
-  Locale['da_DK'] = 'da_DK';
-  Locale['is_IS'] = 'is_IS';
-  Locale['hu_HU'] = 'hu_HU';
-  Locale['pl_PL'] = 'pl_PL';
-  Locale['lv_LV'] = 'lv_LV';
-  Locale['lt_LT'] = 'lt_LT';
+(function (Locale) {
+  Locale["en_US"] = "en_US";
+  Locale["nl_NL"] = "nl_NL";
+  Locale["nl_BE"] = "nl_BE";
+  Locale["fr_FR"] = "fr_FR";
+  Locale["fr_BE"] = "fr_BE";
+  Locale["de_DE"] = "de_DE";
+  Locale["de_AT"] = "de_AT";
+  Locale["de_CH"] = "de_CH";
+  Locale["es_ES"] = "es_ES";
+  Locale["ca_ES"] = "ca_ES";
+  Locale["pt_PT"] = "pt_PT";
+  Locale["it_IT"] = "it_IT";
+  Locale["nb_NO"] = "nb_NO";
+  Locale["sv_SE"] = "sv_SE";
+  Locale["fi_FI"] = "fi_FI";
+  Locale["da_DK"] = "da_DK";
+  Locale["is_IS"] = "is_IS";
+  Locale["hu_HU"] = "hu_HU";
+  Locale["pl_PL"] = "pl_PL";
+  Locale["lv_LV"] = "lv_LV";
+  Locale["lt_LT"] = "lt_LT";
 })(Locale || (Locale = {}));
 
 let PaymentMethod;
 
-(function(PaymentMethod) {
-  PaymentMethod['applepay'] = 'applepay';
-  PaymentMethod['bancontact'] = 'bancontact';
-  PaymentMethod['banktransfer'] = 'banktransfer';
-  PaymentMethod['belfius'] = 'belfius';
-  PaymentMethod['creditcard'] = 'creditcard';
-  PaymentMethod['directdebit'] = 'directdebit';
-  PaymentMethod['eps'] = 'eps';
-  PaymentMethod['giftcard'] = 'giftcard';
-  PaymentMethod['giropay'] = 'giropay';
-  PaymentMethod['ideal'] = 'ideal';
-  PaymentMethod['inghomepay'] = 'inghomepay';
-  PaymentMethod['kbc'] = 'kbc';
-  PaymentMethod['klarnapaylater'] = 'klarnapaylater';
-  PaymentMethod['klarnasliceit'] = 'klarnasliceit';
-  PaymentMethod['paypal'] = 'paypal';
-  PaymentMethod['paysafecard'] = 'paysafecard';
-  PaymentMethod['przelewy24'] = 'przelewy24';
-  PaymentMethod['sofort'] = 'sofort';
+(function (PaymentMethod) {
+  PaymentMethod["applepay"] = "applepay";
+  PaymentMethod["bancontact"] = "bancontact";
+  PaymentMethod["banktransfer"] = "banktransfer";
+  PaymentMethod["belfius"] = "belfius";
+  PaymentMethod["creditcard"] = "creditcard";
+  PaymentMethod["directdebit"] = "directdebit";
+  PaymentMethod["eps"] = "eps";
+  PaymentMethod["giftcard"] = "giftcard";
+  PaymentMethod["giropay"] = "giropay";
+  PaymentMethod["ideal"] = "ideal";
+  PaymentMethod["inghomepay"] = "inghomepay";
+  PaymentMethod["kbc"] = "kbc";
+  PaymentMethod["klarnapaylater"] = "klarnapaylater";
+  PaymentMethod["klarnasliceit"] = "klarnasliceit";
+  PaymentMethod["paypal"] = "paypal";
+  PaymentMethod["paysafecard"] = "paysafecard";
+  PaymentMethod["przelewy24"] = "przelewy24";
+  PaymentMethod["sofort"] = "sofort";
 })(PaymentMethod || (PaymentMethod = {}));
 
 let HistoricPaymentMethod;
 
-(function(HistoricPaymentMethod) {
-  HistoricPaymentMethod['bitcoin'] = 'bitcoin';
+(function (HistoricPaymentMethod) {
+  HistoricPaymentMethod["bitcoin"] = "bitcoin";
 })(HistoricPaymentMethod || (HistoricPaymentMethod = {}));
 
 let ApiMode;
 
-(function(ApiMode) {
-  ApiMode['test'] = 'test';
-  ApiMode['live'] = 'live';
+(function (ApiMode) {
+  ApiMode["test"] = "test";
+  ApiMode["live"] = "live";
 })(ApiMode || (ApiMode = {}));
 
 let SequenceType;
 
-(function(SequenceType) {
-  SequenceType['oneoff'] = 'oneoff';
-  SequenceType['first'] = 'first';
-  SequenceType['recurring'] = 'recurring';
+(function (SequenceType) {
+  SequenceType["oneoff"] = "oneoff";
+  SequenceType["first"] = "first";
+  SequenceType["recurring"] = "recurring";
 })(SequenceType || (SequenceType = {}));
 
 /**
@@ -4214,73 +4219,73 @@ class Payment extends Model {
   constructor(props) {
     super();
 
-    _defineProperty(this, 'resource', void 0);
+    _defineProperty(this, "resource", void 0);
 
-    _defineProperty(this, 'id', void 0);
+    _defineProperty(this, "id", void 0);
 
-    _defineProperty(this, 'mode', void 0);
+    _defineProperty(this, "mode", void 0);
 
-    _defineProperty(this, 'createdAt', void 0);
+    _defineProperty(this, "createdAt", void 0);
 
-    _defineProperty(this, 'status', void 0);
+    _defineProperty(this, "status", void 0);
 
-    _defineProperty(this, 'isCancelable', void 0);
+    _defineProperty(this, "isCancelable", void 0);
 
-    _defineProperty(this, 'paidAt', void 0);
+    _defineProperty(this, "paidAt", void 0);
 
-    _defineProperty(this, 'canceledAt', void 0);
+    _defineProperty(this, "canceledAt", void 0);
 
-    _defineProperty(this, 'expiresAt', void 0);
+    _defineProperty(this, "expiresAt", void 0);
 
-    _defineProperty(this, 'expiredAt', void 0);
+    _defineProperty(this, "expiredAt", void 0);
 
-    _defineProperty(this, 'failedAt', void 0);
+    _defineProperty(this, "failedAt", void 0);
 
-    _defineProperty(this, 'amount', void 0);
+    _defineProperty(this, "amount", void 0);
 
-    _defineProperty(this, 'amountRefunded', void 0);
+    _defineProperty(this, "amountRefunded", void 0);
 
-    _defineProperty(this, 'amountRemaining', void 0);
+    _defineProperty(this, "amountRemaining", void 0);
 
-    _defineProperty(this, 'description', void 0);
+    _defineProperty(this, "description", void 0);
 
-    _defineProperty(this, 'redirectUrl', void 0);
+    _defineProperty(this, "redirectUrl", void 0);
 
-    _defineProperty(this, 'webhookUrl', void 0);
+    _defineProperty(this, "webhookUrl", void 0);
 
-    _defineProperty(this, 'method', void 0);
+    _defineProperty(this, "method", void 0);
 
-    _defineProperty(this, 'metadata', void 0);
+    _defineProperty(this, "metadata", void 0);
 
-    _defineProperty(this, 'locale', void 0);
+    _defineProperty(this, "locale", void 0);
 
-    _defineProperty(this, 'countryCode', void 0);
+    _defineProperty(this, "countryCode", void 0);
 
-    _defineProperty(this, 'profileId', void 0);
+    _defineProperty(this, "profileId", void 0);
 
-    _defineProperty(this, 'settlementAmount', void 0);
+    _defineProperty(this, "settlementAmount", void 0);
 
-    _defineProperty(this, 'settlementId', void 0);
+    _defineProperty(this, "settlementId", void 0);
 
-    _defineProperty(this, 'customerId', void 0);
+    _defineProperty(this, "customerId", void 0);
 
-    _defineProperty(this, 'sequenceType', void 0);
+    _defineProperty(this, "sequenceType", void 0);
 
-    _defineProperty(this, 'mandateId', void 0);
+    _defineProperty(this, "mandateId", void 0);
 
-    _defineProperty(this, 'subscriptionId', void 0);
+    _defineProperty(this, "subscriptionId", void 0);
 
-    _defineProperty(this, 'applicationFee', void 0);
+    _defineProperty(this, "applicationFee", void 0);
 
-    _defineProperty(this, 'details', void 0);
+    _defineProperty(this, "details", void 0);
 
-    _defineProperty(this, '_links', void 0);
+    _defineProperty(this, "_links", void 0);
 
-    _defineProperty(this, '_embedded', null);
+    _defineProperty(this, "_embedded", null);
 
-    _defineProperty(this, 'amountCaptured', null);
+    _defineProperty(this, "amountCaptured", null);
 
-    _defineProperty(this, 'orderId', null);
+    _defineProperty(this, "orderId", null);
 
     Object.assign(this, props);
 
@@ -4306,6 +4311,7 @@ class Payment extends Model {
    * @public ✓ This method is part of the public API
    */
 
+
   isOpen() {
     return this.status === PaymentStatus.open;
   }
@@ -4314,6 +4320,7 @@ class Payment extends Model {
    *
    * @public ✓ This method is part of the public API
    */
+
 
   isAuthorized() {
     return this.status === PaymentStatus.authorized;
@@ -4324,6 +4331,7 @@ class Payment extends Model {
    * @public ✓ This method is part of the public API
    */
 
+
   isPaid() {
     return !!this.paidAt;
   }
@@ -4333,6 +4341,7 @@ class Payment extends Model {
    * @public ✓ This method is part of the public API
    */
 
+
   isCanceled() {
     return this.status == PaymentStatus.canceled;
   }
@@ -4341,6 +4350,7 @@ class Payment extends Model {
    *
    * @public ✓ This method is part of the public API
    */
+
 
   isExpired() {
     return this.status == PaymentStatus.expired;
@@ -4353,6 +4363,7 @@ class Payment extends Model {
    * @since 2.0.0-rc.2
    */
 
+
   isRefundable() {
     return this.amountRemaining !== null;
   }
@@ -4362,6 +4373,7 @@ class Payment extends Model {
    * @public ✓ This method is part of the public API
    */
 
+
   getPaymentUrl() {
     return get(this._links, 'checkout.href', null);
   }
@@ -4370,6 +4382,7 @@ class Payment extends Model {
    *
    * @public ✓ This method is part of the public API
    */
+
 
   isFailed() {
     return this.status == PaymentStatus.failed;
@@ -4381,6 +4394,7 @@ class Payment extends Model {
    * @public ✓ This method is part of the public API
    */
 
+
   isPending() {
     return this.status == PaymentStatus.pending;
   }
@@ -4390,6 +4404,7 @@ class Payment extends Model {
    * @public ✓ This method is part of the public API
    */
 
+
   hasRefunds() {
     return this._links.refunds != undefined;
   }
@@ -4398,6 +4413,7 @@ class Payment extends Model {
    *
    * @public ✓ This method is part of the public API
    */
+
 
   hasChargebacks() {
     return this._links.chargebacks != undefined;
@@ -4409,6 +4425,7 @@ class Payment extends Model {
    * @public ✓ This method is part of the public API
    */
 
+
   hasSequenceTypeFirst() {
     return this.sequenceType == SequenceType.first;
   }
@@ -4418,6 +4435,7 @@ class Payment extends Model {
    *
    * @public ✓ This method is part of the public API
    */
+
 
   hasSequenceTypeRecurring() {
     return this.sequenceType == SequenceType.recurring;
@@ -4430,6 +4448,7 @@ class Payment extends Model {
    * @public ✓ This method is part of the public API
    */
 
+
   getCheckoutUrl() {
     if (this._links.checkout == undefined) {
       return null;
@@ -4441,12 +4460,14 @@ class Payment extends Model {
    * @public ✓ This method is part of the public API
    */
 
+
   canBeRefunded() {
     return this.amountRemaining != undefined;
   }
   /**
    * @public ✓ This method is part of the public API
    */
+
 
   canBePartiallyRefunded() {
     return this.canBeRefunded();
@@ -4458,13 +4479,14 @@ class Payment extends Model {
    * @public ✓ This method is part of the public API
    */
 
+
   getAmountRefunded() {
     if (this.amountRefunded == undefined) {
       return {
         // Perhaps this zero-value should depend on the currency. If the currency is JPY (¥), for instance, the value
         // should probably be "0"; not "0.00".
         value: '0.00',
-        currency: this.amount.currency,
+        currency: this.amount.currency
       };
     }
 
@@ -4476,21 +4498,23 @@ class Payment extends Model {
    * @public ✓ This method is part of the public API
    */
 
+
   getAmountRemaining() {
     if (this.amountRemaining == undefined) {
       return {
         // Perhaps this zero-value should depend on the currency. If the currency is JPY (¥), for instance, the value
         // should probably be "0"; not "0.00".
         value: '0.00',
-        currency: this.amount.currency,
+        currency: this.amount.currency
       };
     }
 
     return this.amountRemaining;
   }
+
 }
 
-_defineProperty(Payment, 'resourcePrefix', 'tr_');
+_defineProperty(Payment, "resourcePrefix", 'tr_');
 
 /**
  * A list helper class
@@ -4499,17 +4523,17 @@ class List extends Array {
   constructor(...args) {
     super(...args);
 
-    _defineProperty(this, 'links', null);
+    _defineProperty(this, "links", null);
 
-    _defineProperty(this, 'count', null);
+    _defineProperty(this, "count", null);
 
-    _defineProperty(this, 'nextPage', null);
+    _defineProperty(this, "nextPage", null);
 
-    _defineProperty(this, 'previousPage', null);
+    _defineProperty(this, "previousPage", null);
 
-    _defineProperty(this, 'nextPageCursor', null);
+    _defineProperty(this, "nextPageCursor", null);
 
-    _defineProperty(this, 'previousPageCursor', null);
+    _defineProperty(this, "previousPageCursor", null);
   }
 
   static getNextPageParams(links) {
@@ -4532,27 +4556,39 @@ class List extends Array {
     return {};
   }
 
-  static buildResourceList({ response, resourceName, params, callback, getResources, Model }) {
-    const { _embedded, count, _links } = response;
+  static buildResourceList({
+    response,
+    resourceName,
+    params,
+    callback,
+    getResources,
+    Model
+  }) {
+    const {
+      _embedded,
+      count,
+      _links
+    } = response;
     const resources = _embedded[resourceName];
     const list = new List();
     list.links = _links;
     list.count = count;
     list.nextPage =
-      /*#__PURE__*/
-      _asyncToGenerator(function*() {
-        return getResources(_objectSpread2({}, params, {}, List.getNextPageParams(_links)), callback);
-      });
+    /*#__PURE__*/
+    _asyncToGenerator(function* () {
+      return getResources(_objectSpread2({}, params, {}, List.getNextPageParams(_links)), callback);
+    });
     list.previousPage =
-      /*#__PURE__*/
-      _asyncToGenerator(function*() {
-        return getResources(_objectSpread2({}, params, {}, List.getPreviousPageParams(_links)), callback);
-      });
+    /*#__PURE__*/
+    _asyncToGenerator(function* () {
+      return getResources(_objectSpread2({}, params, {}, List.getPreviousPageParams(_links)), callback);
+    });
     list.nextPageCursor = List.getNextPageParams(_links).from;
     list.previousPageCursor = List.getPreviousPageParams(_links).from;
     list.push(...resources.map(resource => new Model(resource)));
     return list;
   }
+
 }
 
 /**
@@ -4562,13 +4598,13 @@ class ApiError extends Error {
   constructor(message, title, status, field, links) {
     super(message);
 
-    _defineProperty(this, 'title', void 0);
+    _defineProperty(this, "title", void 0);
 
-    _defineProperty(this, 'status', void 0);
+    _defineProperty(this, "status", void 0);
 
-    _defineProperty(this, 'field', void 0);
+    _defineProperty(this, "field", void 0);
 
-    _defineProperty(this, 'links', void 0);
+    _defineProperty(this, "links", void 0);
 
     this.name = 'ApiError';
     this.title = title;
@@ -4586,6 +4622,7 @@ class ApiError extends Error {
    * @public ✓ This method is part of the public API
    */
 
+
   getMessage() {
     return this.message;
   }
@@ -4598,6 +4635,7 @@ class ApiError extends Error {
    *
    * @public ✓ This method is part of the public API
    */
+
 
   getField() {
     return this.field;
@@ -4612,6 +4650,7 @@ class ApiError extends Error {
    * @public ✓ This method is part of the public API
    */
 
+
   getStatusCode() {
     return this.status;
   }
@@ -4625,6 +4664,7 @@ class ApiError extends Error {
    * @public ✓ This method is part of the public API
    */
 
+
   getDocumentationUrl() {
     return this.getUrl('documentation');
   }
@@ -4637,6 +4677,7 @@ class ApiError extends Error {
    *
    * @public ✓ This method is part of the public API
    */
+
 
   getDashboardUrl() {
     return this.getUrl('dashboard');
@@ -4653,6 +4694,7 @@ class ApiError extends Error {
    * @public ✓ This method is part of the public API
    */
 
+
   hasLink(key) {
     return has(this.links, key);
   }
@@ -4668,6 +4710,7 @@ class ApiError extends Error {
    * @public ✓ This method is part of the public API
    */
 
+
   getLink(key) {
     return get(this.links, key);
   }
@@ -4681,6 +4724,7 @@ class ApiError extends Error {
    *
    * @public ✓ This method is part of the public API
    */
+
 
   getUrl(key) {
     return get(this.getLink(key), 'href');
@@ -4699,9 +4743,11 @@ class ApiError extends Error {
    * @since 3.0.0
    */
 
+
   static createFromResponse(error) {
     return new ApiError(get(error, 'detail'), get(error, 'title'), get(error, 'status'), get(error, 'field'), cloneDeep(get(error, '_links')));
   }
+
 }
 
 /**
@@ -4742,13 +4788,13 @@ class Resource {
    * Constructor
    */
   constructor(httpClient) {
-    _defineProperty(this, 'apiName', void 0);
+    _defineProperty(this, "apiName", void 0);
 
-    _defineProperty(this, 'resourcePrefix', void 0);
+    _defineProperty(this, "resourcePrefix", void 0);
 
-    _defineProperty(this, 'httpClient', void 0);
+    _defineProperty(this, "httpClient", void 0);
 
-    _defineProperty(this, 'parentId', void 0);
+    _defineProperty(this, "parentId", void 0);
 
     this.httpClient = httpClient;
   }
@@ -4762,10 +4808,11 @@ class Resource {
    * throws said error.
    */
 
+
   static createApiError(responseOrMessage, cb) {
     // This method is essentially a thin wrapper around either the ApiError constructor or ApiError.createFromResponse.
     // When we implement a more generic solution for the callbacks, I think this method becomes obsolete.
-    var error;
+    let error;
 
     if (typeof responseOrMessage == 'string') {
       error = new ApiError(responseOrMessage);
@@ -4788,6 +4835,7 @@ class Resource {
    * @deprecated 2.0.0. This method is not supported by the v2 API.
    */
 
+
   withParent(parent) {
     if (parent && parent.id) {
       this.setParentId(parent.id);
@@ -4808,10 +4856,11 @@ class Resource {
    * @public ✓ This method is part of the public API
    */
 
+
   create(prms, cb) {
     var _this = this;
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       const params = cloneDeep(prms);
       const callback = typeof params === 'function' ? params : cb;
       const query = {};
@@ -4829,12 +4878,9 @@ class Resource {
       }
 
       try {
-        const response = yield _this.getClient().post(
-          `${_this.getResourceUrl()}${qs.stringify(query, {
-            addQueryPrefix: true,
-          })}`,
-          params,
-        ); // noinspection JSPotentiallyInvalidConstructorUsage
+        const response = yield _this.getClient().post(`${_this.getResourceUrl()}${qs.stringify(query, {
+          addQueryPrefix: true
+        })}`, params); // noinspection JSPotentiallyInvalidConstructorUsage
 
         const model = new _this.constructor.model(response.data); // TODO If the passed callback throws an error, it will actually be caught here. This is probably not what we
         // want (especially since it will probably not have a response property).
@@ -4861,10 +4907,11 @@ class Resource {
    * @since 1.0.0
    */
 
+
   get(id, prms, cb) {
     var _this2 = this;
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       const params = cloneDeep(prms);
       const callback = typeof params === 'function' ? params : cb;
       const query = {};
@@ -4882,11 +4929,9 @@ class Resource {
       }
 
       try {
-        const response = yield _this2.getClient().get(
-          `${_this2.getResourceUrl()}/${id}${qs.stringify(query, {
-            addQueryPrefix: true,
-          })}`,
-        ); // noinspection JSPotentiallyInvalidConstructorUsage
+        const response = yield _this2.getClient().get(`${_this2.getResourceUrl()}/${id}${qs.stringify(query, {
+          addQueryPrefix: true
+        })}`); // noinspection JSPotentiallyInvalidConstructorUsage
 
         const model = new _this2.constructor.model(response.data);
 
@@ -4911,10 +4956,11 @@ class Resource {
    * @since 1.0.0
    */
 
+
   list(prms, cb) {
     var _this3 = this;
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       const params = cloneDeep(prms);
 
       try {
@@ -4942,11 +4988,9 @@ class Resource {
           }
         }
 
-        const response = yield _this3.getClient().get(
-          `${_this3.getResourceUrl()}${qs.stringify(query, {
-            addQueryPrefix: true,
-          })}`,
-        );
+        const response = yield _this3.getClient().get(`${_this3.getResourceUrl()}${qs.stringify(query, {
+          addQueryPrefix: true
+        })}`);
 
         const resourceName = _this3.getResourceName();
 
@@ -4956,7 +5000,7 @@ class Resource {
           params,
           callback: cb,
           getResources: _this3.list.bind(_this3),
-          Model: _this3.constructor.model,
+          Model: _this3.constructor.model
         });
 
         if (typeof cb === 'function') {
@@ -4981,10 +5025,11 @@ class Resource {
    * @since 1.0.0
    */
 
+
   update(id, params, cb) {
     var _this4 = this;
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       try {
         const response = yield _this4.getClient().patch(`${_this4.getResourceUrl()}/${id}`, params); // noinspection JSPotentiallyInvalidConstructorUsage
 
@@ -5014,10 +5059,11 @@ class Resource {
    * @since 1.0.0
    */
 
+
   delete(id, params, cb) {
     var _this5 = this;
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       try {
         const response = yield _this5.getClient().delete(`${_this5.getResourceUrl()}/${id}`);
         let model;
@@ -5044,6 +5090,7 @@ class Resource {
    * @since 2.0.0
    */
 
+
   getClient() {
     return this.httpClient;
   }
@@ -5052,6 +5099,7 @@ class Resource {
    *
    * @since 2.0.0
    */
+
 
   setParentId(parentId) {
     this.parentId = parentId;
@@ -5062,6 +5110,7 @@ class Resource {
    * @since 2.0.0
    */
 
+
   hasParentId() {
     return !!this.parentId;
   }
@@ -5070,6 +5119,7 @@ class Resource {
    *
    * @since 2.0.0
    */
+
 
   getResourceUrl() {
     if (this.constructor.resource.indexOf('_') !== -1) {
@@ -5085,6 +5135,7 @@ class Resource {
    * @since 2.0.0-rc.2
    */
 
+
   getResourceName() {
     // Instantiate the model to get the defaults
     if (this.constructor.resource.includes('_')) {
@@ -5093,11 +5144,12 @@ class Resource {
 
     return this.constructor.resource;
   }
+
 }
 
-_defineProperty(Resource, 'resource', void 0);
+_defineProperty(Resource, "resource", void 0);
 
-_defineProperty(Resource, 'model', void 0);
+_defineProperty(Resource, "model", void 0);
 
 /**
  * Payments base resource
@@ -5115,6 +5167,7 @@ class PaymentsBaseResource extends Resource {
    * @deprecated 3.0.0 Please use setParentId instead
    */
 
+
   setParent(params = {}) {
     if (!params.paymentId && !this.hasParentId()) {
       throw new TypeError('Missing parameter "paymentId".');
@@ -5122,6 +5175,7 @@ class PaymentsBaseResource extends Resource {
       this.setParentId(params.paymentId);
     }
   }
+
 }
 
 /**
@@ -5131,10 +5185,11 @@ class NotImplementedError extends Error {
   constructor(message, apiName) {
     super(message);
 
-    _defineProperty(this, 'apiName', void 0);
+    _defineProperty(this, "apiName", void 0);
 
     this.apiName = apiName;
   }
+
 }
 
 /**
@@ -5145,13 +5200,13 @@ class PaymentsResource extends PaymentsBaseResource {
   constructor(...args) {
     super(...args);
 
-    _defineProperty(this, 'apiName', 'Payments API');
+    _defineProperty(this, "apiName", 'Payments API');
 
-    _defineProperty(this, 'all', this.list);
+    _defineProperty(this, "all", this.list);
 
-    _defineProperty(this, 'page', this.list);
+    _defineProperty(this, "page", this.list);
 
-    _defineProperty(this, 'delete', this.cancel);
+    _defineProperty(this, "delete", this.cancel);
   }
 
   /**
@@ -5171,7 +5226,7 @@ class PaymentsResource extends PaymentsBaseResource {
   create(params, cb) {
     var _superprop_callCreate = (..._args) => super.create(..._args);
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       return _superprop_callCreate(params, cb);
     })();
   }
@@ -5192,10 +5247,11 @@ class PaymentsResource extends PaymentsBaseResource {
    * @public ✓ This method is part of the public API
    */
 
+
   get(id, params, cb) {
     var _superprop_callGet = (..._args2) => super.get(..._args2);
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       // Using callbacks (DEPRECATED SINCE 3.0.0)
       if (typeof params === 'function' || typeof cb === 'function') {
         if (!startsWith(id, Payment.resourcePrefix)) {
@@ -5228,10 +5284,11 @@ class PaymentsResource extends PaymentsBaseResource {
    * @public ✓ This method is part of the public API
    */
 
+
   list(params, cb) {
     var _superprop_callList = (..._args3) => super.list(..._args3);
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       // Using callbacks (DEPRECATED SINCE 3.0.0)
       if (typeof params === 'function' || typeof cb === 'function') {
         return _superprop_callList(typeof params === 'function' ? null : params, typeof params === 'function' ? params : cb);
@@ -5259,10 +5316,11 @@ class PaymentsResource extends PaymentsBaseResource {
    * @public ✓ This method is part of the public API
    */
 
+
   cancel(id, params, cb) {
     var _superprop_callDelete = (..._args4) => super.delete(..._args4);
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       if (!startsWith(id, Payment.resourcePrefix)) {
         Resource.createApiError('The payment id is invalid', typeof params === 'function' ? params : cb);
       }
@@ -5274,18 +5332,20 @@ class PaymentsResource extends PaymentsBaseResource {
    * @deprecated 2.0.0. This method is not supported by the v2 API.
    */
 
+
   update() {
     var _this = this;
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       throw new NotImplementedError('This method does not exist', _this.apiName);
     })();
   }
+
 }
 
-_defineProperty(PaymentsResource, 'resource', 'payments');
+_defineProperty(PaymentsResource, "resource", 'payments');
 
-_defineProperty(PaymentsResource, 'model', Payment);
+_defineProperty(PaymentsResource, "model", Payment);
 
 /**
  * The `payments_refunds` resource
@@ -5297,13 +5357,13 @@ class PaymentsRefundsResource extends PaymentsBaseResource {
   constructor(...args) {
     super(...args);
 
-    _defineProperty(this, 'apiName', 'Refunds API');
+    _defineProperty(this, "apiName", 'Refunds API');
 
-    _defineProperty(this, 'all', this.list);
+    _defineProperty(this, "all", this.list);
 
-    _defineProperty(this, 'page', this.list);
+    _defineProperty(this, "page", this.list);
 
-    _defineProperty(this, 'delete', this.cancel);
+    _defineProperty(this, "delete", this.cancel);
   }
 
   /**
@@ -5322,15 +5382,17 @@ class PaymentsRefundsResource extends PaymentsBaseResource {
    */
   create(params, cb) {
     var _this = this,
-      _superprop_callCreate = (..._args) => super.create(..._args);
+        _superprop_callCreate = (..._args) => super.create(..._args);
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       // defaults for .withParent() compatibility (DEPRECATED SINCE 3.0.0)
       const _defaults = defaults(params, {
-          paymentId: _this.parentId,
-        }),
-        { paymentId } = _defaults,
-        parameters = _objectWithoutProperties(_defaults, ['paymentId']);
+        paymentId: _this.parentId
+      }),
+            {
+        paymentId
+      } = _defaults,
+            parameters = _objectWithoutProperties(_defaults, ["paymentId"]);
 
       if (!startsWith(paymentId, Payment.resourcePrefix)) {
         Resource.createApiError('The payment id is invalid', cb);
@@ -5356,11 +5418,12 @@ class PaymentsRefundsResource extends PaymentsBaseResource {
    * @public ✓ This method is part of the public API
    */
 
+
   get(id, params, cb) {
     var _this2 = this,
-      _superprop_callGet = (..._args2) => super.get(..._args2);
+        _superprop_callGet = (..._args2) => super.get(..._args2);
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       // Using callbacks (DEPRECATED SINCE 3.0.0)
       if (typeof params === 'function' || typeof cb === 'function') {
         if (!startsWith(id, Refund.resourcePrefix)) {
@@ -5382,11 +5445,14 @@ class PaymentsRefundsResource extends PaymentsBaseResource {
         Resource.createApiError('The payments_refund id is invalid', cb);
       } // defaults for .withParent() compatibility (DEPRECATED SINCE 3.0.0)
 
+
       const _defaults2 = defaults(params, {
-          paymentId: _this2.parentId,
-        }),
-        { paymentId } = _defaults2,
-        parameters = _objectWithoutProperties(_defaults2, ['paymentId']);
+        paymentId: _this2.parentId
+      }),
+            {
+        paymentId
+      } = _defaults2,
+            parameters = _objectWithoutProperties(_defaults2, ["paymentId"]);
 
       if (!startsWith(paymentId, Payment.resourcePrefix)) {
         Resource.createApiError('The payment id is invalid', cb);
@@ -5411,11 +5477,12 @@ class PaymentsRefundsResource extends PaymentsBaseResource {
    * @public ✓ This method is part of the public API
    */
 
+
   list(params, cb) {
     var _this3 = this,
-      _superprop_callList = (..._args3) => super.list(..._args3);
+        _superprop_callList = (..._args3) => super.list(..._args3);
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       // Using callbacks (DEPRECATED SINCE 3.0.0)
       if (typeof params === 'function' || typeof cb === 'function') {
         const paymentId = get(params, 'paymentId') || _this3.parentId;
@@ -5429,11 +5496,14 @@ class PaymentsRefundsResource extends PaymentsBaseResource {
         return _superprop_callList(typeof params === 'function' ? null : params, typeof params === 'function' ? params : cb);
       } // defaults for .withParent() compatibility (DEPRECATED SINCE 3.0.0)
 
+
       const _defaults3 = defaults(params, {
-          paymentId: _this3.parentId,
-        }),
-        { paymentId } = _defaults3,
-        parameters = _objectWithoutProperties(_defaults3, ['paymentId']);
+        paymentId: _this3.parentId
+      }),
+            {
+        paymentId
+      } = _defaults3,
+            parameters = _objectWithoutProperties(_defaults3, ["paymentId"]);
 
       if (!startsWith(paymentId, Payment.resourcePrefix)) {
         Resource.createApiError('The payment id is invalid');
@@ -5461,11 +5531,12 @@ class PaymentsRefundsResource extends PaymentsBaseResource {
    * @public ✓ This method is part of the public API
    */
 
+
   cancel(id, params, cb) {
     var _this4 = this,
-      _superprop_callDelete = (..._args4) => super.delete(..._args4);
+        _superprop_callDelete = (..._args4) => super.delete(..._args4);
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       // Using callbacks (DEPRECATED SINCE 3.0.0)
       if (typeof params === 'function' || typeof cb === 'function') {
         if (!startsWith(id, Refund.resourcePrefix)) {
@@ -5485,11 +5556,14 @@ class PaymentsRefundsResource extends PaymentsBaseResource {
         Resource.createApiError('The payments_refund id is invalid');
       } // defaults for .withParent() compatibility (DEPRECATED SINCE 3.0.0)
 
+
       const _defaults4 = defaults(params, {
-          paymentId: _this4.parentId,
-        }),
-        { paymentId } = _defaults4,
-        parameters = _objectWithoutProperties(_defaults4, ['paymentId']);
+        paymentId: _this4.parentId
+      }),
+            {
+        paymentId
+      } = _defaults4,
+            parameters = _objectWithoutProperties(_defaults4, ["paymentId"]);
 
       if (!startsWith(paymentId, Payment.resourcePrefix)) {
         Resource.createApiError('The payment id is invalid');
@@ -5504,18 +5578,20 @@ class PaymentsRefundsResource extends PaymentsBaseResource {
    * @deprecated 2.0.0. This method is not supported by the v2 API.
    */
 
+
   update() {
     var _this5 = this;
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       throw new NotImplementedError('This method does not exist', _this5.apiName);
     })();
   }
+
 }
 
-_defineProperty(PaymentsRefundsResource, 'resource', 'payments_refunds');
+_defineProperty(PaymentsRefundsResource, "resource", 'payments_refunds');
 
-_defineProperty(PaymentsRefundsResource, 'model', Refund);
+_defineProperty(PaymentsRefundsResource, "model", Refund);
 
 /**
  * The `payments_chargebacks` resource
@@ -5527,11 +5603,11 @@ class PaymentsChargebacksResource extends PaymentsBaseResource {
   constructor(...args) {
     super(...args);
 
-    _defineProperty(this, 'apiName', 'Chargebacks API');
+    _defineProperty(this, "apiName", 'Chargebacks API');
 
-    _defineProperty(this, 'all', this.list);
+    _defineProperty(this, "all", this.list);
 
-    _defineProperty(this, 'page', this.list);
+    _defineProperty(this, "page", this.list);
   }
 
   /**
@@ -5552,9 +5628,9 @@ class PaymentsChargebacksResource extends PaymentsBaseResource {
    */
   get(id, params, cb) {
     var _this = this,
-      _superprop_callGet = (..._args) => super.get(..._args);
+        _superprop_callGet = (..._args) => super.get(..._args);
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       // Using callbacks (DEPRECATED SINCE 3.0.0)
       if (typeof params === 'function' || typeof cb === 'function') {
         const paymentId = get(params, 'paymentId') || _this.parentId;
@@ -5572,11 +5648,14 @@ class PaymentsChargebacksResource extends PaymentsBaseResource {
         return _superprop_callGet(id, typeof params === 'function' ? null : params, typeof params === 'function' ? params : cb);
       } // defaults for .withParent() compatibility (DEPRECATED SINCE 3.0.0)
 
+
       const _defaults = defaults(params, {
-          paymentId: _this.parentId,
-        }),
-        { paymentId } = _defaults,
-        parameters = _objectWithoutProperties(_defaults, ['paymentId']);
+        paymentId: _this.parentId
+      }),
+            {
+        paymentId
+      } = _defaults,
+            parameters = _objectWithoutProperties(_defaults, ["paymentId"]);
 
       if (!startsWith(id, Chargeback.resourcePrefix)) {
         Resource.createApiError('The chargeback id is invalid');
@@ -5606,11 +5685,12 @@ class PaymentsChargebacksResource extends PaymentsBaseResource {
    * @public ✓ This method is part of the public API
    */
 
+
   list(params, cb) {
     var _this2 = this,
-      _superprop_callList = (..._args2) => super.list(..._args2);
+        _superprop_callList = (..._args2) => super.list(..._args2);
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       // Using callbacks (DEPRECATED SINCE 3.0.0)
       if (typeof params === 'function' || typeof cb === 'function') {
         const paymentId = get(params, 'paymentId') || _this2.parentId;
@@ -5624,11 +5704,14 @@ class PaymentsChargebacksResource extends PaymentsBaseResource {
         return _superprop_callList(typeof params === 'function' ? null : params, typeof params === 'function' ? params : cb);
       } // defaults for .withParent() compatibility (DEPRECATED SINCE 3.0.0)
 
+
       const _defaults2 = defaults(params, {
-          paymentId: _this2.parentId,
-        }),
-        { paymentId } = _defaults2,
-        parameters = _objectWithoutProperties(_defaults2, ['paymentId']);
+        paymentId: _this2.parentId
+      }),
+            {
+        paymentId
+      } = _defaults2,
+            parameters = _objectWithoutProperties(_defaults2, ["paymentId"]);
 
       if (!startsWith(paymentId, Payment.resourcePrefix)) {
         Resource.createApiError('The payment id is invalid');
@@ -5643,10 +5726,11 @@ class PaymentsChargebacksResource extends PaymentsBaseResource {
    * @deprecated 2.0.0. This method is not supported by the v2 API.
    */
 
+
   create() {
     var _this3 = this;
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       throw new NotImplementedError('This method does not exist', _this3.apiName);
     })();
   }
@@ -5654,10 +5738,11 @@ class PaymentsChargebacksResource extends PaymentsBaseResource {
    * @deprecated 2.0.0. This method is not supported by the v2 API.
    */
 
+
   update() {
     var _this4 = this;
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       throw new NotImplementedError('This method does not exist', _this4.apiName);
     })();
   }
@@ -5665,10 +5750,11 @@ class PaymentsChargebacksResource extends PaymentsBaseResource {
    * @deprecated 2.0.0. This method is not supported by the v2 API.
    */
 
+
   cancel() {
     var _this5 = this;
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       throw new NotImplementedError('This method does not exist', _this5.apiName);
     })();
   }
@@ -5676,18 +5762,20 @@ class PaymentsChargebacksResource extends PaymentsBaseResource {
    * @deprecated 2.0.0. This method is not supported by the v2 API.
    */
 
+
   delete() {
     var _this6 = this;
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       throw new NotImplementedError('This method does not exist', _this6.apiName);
     })();
   }
+
 }
 
-_defineProperty(PaymentsChargebacksResource, 'resource', 'payments_chargebacks');
+_defineProperty(PaymentsChargebacksResource, "resource", 'payments_chargebacks');
 
-_defineProperty(PaymentsChargebacksResource, 'model', Chargeback);
+_defineProperty(PaymentsChargebacksResource, "model", Chargeback);
 
 /**
  * Method Response object.
@@ -5704,10 +5792,10 @@ _defineProperty(PaymentsChargebacksResource, 'model', Chargeback);
  */
 let MethodImageSize;
 
-(function(MethodImageSize) {
-  MethodImageSize['size1x'] = 'size1x';
-  MethodImageSize['size2x'] = 'size2x';
-  MethodImageSize['svg'] = 'svg';
+(function (MethodImageSize) {
+  MethodImageSize["size1x"] = "size1x";
+  MethodImageSize["size2x"] = "size2x";
+  MethodImageSize["svg"] = "svg";
 })(MethodImageSize || (MethodImageSize = {}));
 
 let MethodInclude;
@@ -5719,9 +5807,9 @@ let MethodInclude;
  * @param variable - A string containing the percentage what will be charged over the payment amount besides the fixed price.
  */
 
-(function(MethodInclude) {
-  MethodInclude['issuers'] = 'issuers';
-  MethodInclude['pricing'] = 'pricing';
+(function (MethodInclude) {
+  MethodInclude["issuers"] = "issuers";
+  MethodInclude["pricing"] = "pricing";
 })(MethodInclude || (MethodInclude = {}));
 
 /**
@@ -5739,21 +5827,21 @@ class Method extends Model {
   constructor(props) {
     super();
 
-    _defineProperty(this, 'resource', 'method');
+    _defineProperty(this, "resource", 'method');
 
-    _defineProperty(this, 'id', null);
+    _defineProperty(this, "id", null);
 
-    _defineProperty(this, 'description', null);
+    _defineProperty(this, "description", null);
 
-    _defineProperty(this, 'image', {
+    _defineProperty(this, "image", {
       size1x: null,
       size2x: null,
-      svg: null,
+      svg: null
     });
 
-    _defineProperty(this, '_links', {
+    _defineProperty(this, "_links", {
       self: null,
-      documentation: null,
+      documentation: null
     });
 
     Object.assign(this, props);
@@ -5772,6 +5860,7 @@ class Method extends Model {
    * @public ✓ This method is part of the public API
    */
 
+
   getImage(size = MethodImageSize.size2x) {
     switch (size) {
       case '1x':
@@ -5789,6 +5878,7 @@ class Method extends Model {
         return undefined;
     }
   }
+
 }
 
 /**
@@ -5801,11 +5891,11 @@ class MethodsResource extends Resource {
   constructor(...args) {
     super(...args);
 
-    _defineProperty(this, 'apiName', 'Methods API');
+    _defineProperty(this, "apiName", 'Methods API');
 
-    _defineProperty(this, 'all', this.list);
+    _defineProperty(this, "all", this.list);
 
-    _defineProperty(this, 'page', this.list);
+    _defineProperty(this, "page", this.list);
   }
 
   get(id, params, cb) {
@@ -5838,6 +5928,7 @@ class MethodsResource extends Resource {
    * @public ✓ This method is part of the public API
    */
 
+
   /**
    * Retrieve a list of Payment Methods
    *
@@ -5856,7 +5947,7 @@ class MethodsResource extends Resource {
   list(params, cb) {
     var _superprop_callList = (..._args) => super.list(..._args);
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       // Using callbacks (DEPRECATED SINCE 3.0.0)
       if (typeof params === 'function' || typeof cb === 'function') {
         return _superprop_callList(typeof params === 'function' ? null : params, typeof params === 'function' ? params : cb);
@@ -5869,10 +5960,11 @@ class MethodsResource extends Resource {
    * @deprecated 2.0.0. This method is not supported by the v2 API.
    */
 
+
   create() {
     var _this = this;
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       throw new NotImplementedError('This method does not exist', _this.apiName);
     })();
   }
@@ -5880,10 +5972,11 @@ class MethodsResource extends Resource {
    * @deprecated 2.0.0. This method is not supported by the v2 API.
    */
 
+
   update() {
     var _this2 = this;
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       throw new NotImplementedError('This method does not exist', _this2.apiName);
     })();
   }
@@ -5891,10 +5984,11 @@ class MethodsResource extends Resource {
    * @deprecated 2.0.0. This method is not supported by the v2 API.
    */
 
+
   cancel() {
     var _this3 = this;
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       throw new NotImplementedError('This method does not exist', _this3.apiName);
     })();
   }
@@ -5902,18 +5996,20 @@ class MethodsResource extends Resource {
    * @deprecated 2.0.0. This method is not supported by the v2 API.
    */
 
+
   delete() {
     var _this4 = this;
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       throw new NotImplementedError('This method does not exist', _this4.apiName);
     })();
   }
+
 }
 
-_defineProperty(MethodsResource, 'resource', 'methods');
+_defineProperty(MethodsResource, "resource", 'methods');
 
-_defineProperty(MethodsResource, 'model', Method);
+_defineProperty(MethodsResource, "model", Method);
 
 /**
  * The `refunds` resource
@@ -5925,11 +6021,11 @@ class RefundsResource extends Resource {
   constructor(...args) {
     super(...args);
 
-    _defineProperty(this, 'apiName', 'Refunds API');
+    _defineProperty(this, "apiName", 'Refunds API');
 
-    _defineProperty(this, 'all', this.list);
+    _defineProperty(this, "all", this.list);
 
-    _defineProperty(this, 'page', this.list);
+    _defineProperty(this, "page", this.list);
   }
 
   /**
@@ -5950,7 +6046,7 @@ class RefundsResource extends Resource {
   list(params, cb) {
     var _superprop_callList = (..._args) => super.list(..._args);
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       // Using callbacks (DEPRECATED SINCE 3.0.0)
       if (typeof params === 'function' || typeof cb === 'function') {
         return _superprop_callList(typeof params === 'function' ? null : params, typeof params === 'function' ? params : cb);
@@ -5963,10 +6059,11 @@ class RefundsResource extends Resource {
    * @deprecated 2.0.0. This method is not supported by the v2 API.
    */
 
+
   create() {
     var _this = this;
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       throw new NotImplementedError('This method does not exist', _this.apiName);
     })();
   }
@@ -5974,10 +6071,11 @@ class RefundsResource extends Resource {
    * @deprecated 2.0.0. This method is not supported by the v2 API.
    */
 
+
   get() {
     var _this2 = this;
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       throw new NotImplementedError('This method does not exist', _this2.apiName);
     })();
   }
@@ -5985,10 +6083,11 @@ class RefundsResource extends Resource {
    * @deprecated 2.0.0. This method is not supported by the v2 API.
    */
 
+
   update() {
     var _this3 = this;
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       throw new NotImplementedError('This method does not exist', _this3.apiName);
     })();
   }
@@ -5996,10 +6095,11 @@ class RefundsResource extends Resource {
    * @deprecated 2.0.0. This method is not supported by the v2 API.
    */
 
+
   cancel() {
     var _this4 = this;
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       throw new NotImplementedError('This method does not exist', _this4.apiName);
     })();
   }
@@ -6007,18 +6107,20 @@ class RefundsResource extends Resource {
    * @deprecated 2.0.0. This method is not supported by the v2 API.
    */
 
+
   delete() {
     var _this5 = this;
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       throw new NotImplementedError('This method does not exist', _this5.apiName);
     })();
   }
+
 }
 
-_defineProperty(RefundsResource, 'resource', 'refunds');
+_defineProperty(RefundsResource, "resource", 'refunds');
 
-_defineProperty(RefundsResource, 'model', Refund);
+_defineProperty(RefundsResource, "model", Refund);
 
 /**
  * Customers base resource.
@@ -6047,9 +6149,11 @@ class CustomersBaseResource extends Resource {
    * @since 3.0.0
    */
 
+
   setParentId(parentId) {
     super.setParentId(parentId);
   }
+
 }
 
 /**
@@ -6068,39 +6172,40 @@ class Customer extends Model {
   constructor(props) {
     super();
 
-    _defineProperty(this, 'resource', 'customer');
+    _defineProperty(this, "resource", 'customer');
 
-    _defineProperty(this, 'id', null);
+    _defineProperty(this, "id", null);
 
-    _defineProperty(this, 'mode', null);
+    _defineProperty(this, "mode", null);
 
-    _defineProperty(this, 'name', null);
+    _defineProperty(this, "name", null);
 
-    _defineProperty(this, 'email', null);
+    _defineProperty(this, "email", null);
 
-    _defineProperty(this, 'locale', null);
+    _defineProperty(this, "locale", null);
 
-    _defineProperty(this, 'metadata', null);
+    _defineProperty(this, "metadata", null);
 
-    _defineProperty(this, 'recentlyUsedMethods', null);
+    _defineProperty(this, "recentlyUsedMethods", null);
 
-    _defineProperty(this, 'createdAt', null);
+    _defineProperty(this, "createdAt", null);
 
-    _defineProperty(this, '_links', {
+    _defineProperty(this, "_links", {
       self: null,
       documentation: null,
       mandates: null,
       subscriptions: null,
-      payments: null,
+      payments: null
     });
 
-    _defineProperty(this, 'testmode', void 0);
+    _defineProperty(this, "testmode", void 0);
 
     Object.assign(this, props);
   }
+
 }
 
-_defineProperty(Customer, 'resourcePrefix', 'cst_');
+_defineProperty(Customer, "resourcePrefix", 'cst_');
 
 /**
  * The `Customers` resource
@@ -6109,13 +6214,13 @@ class CustomersResource extends CustomersBaseResource {
   constructor(...args) {
     super(...args);
 
-    _defineProperty(this, 'apiName', 'Customers API');
+    _defineProperty(this, "apiName", 'Customers API');
 
-    _defineProperty(this, 'all', this.list);
+    _defineProperty(this, "all", this.list);
 
-    _defineProperty(this, 'page', this.list);
+    _defineProperty(this, "page", this.list);
 
-    _defineProperty(this, 'cancel', this.delete);
+    _defineProperty(this, "cancel", this.delete);
   }
 
   /**
@@ -6141,7 +6246,7 @@ class CustomersResource extends CustomersBaseResource {
   create(params, cb) {
     var _superprop_callCreate = (..._args) => super.create(..._args);
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       return _superprop_callCreate(params, cb);
     })();
   }
@@ -6162,10 +6267,11 @@ class CustomersResource extends CustomersBaseResource {
    * @public ✓ This method is part of the public API
    */
 
+
   get(id, params, cb) {
     var _superprop_callGet = (..._args2) => super.get(..._args2);
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       // Using callbacks (DEPRECATED SINCE 3.0.0)
       if (typeof params === 'function' || typeof cb === 'function') {
         if (!startsWith(id, Customer.resourcePrefix)) {
@@ -6198,10 +6304,11 @@ class CustomersResource extends CustomersBaseResource {
    * @public ✓ This method is part of the public API
    */
 
+
   list(params, cb) {
     var _superprop_callList = (..._args3) => super.list(..._args3);
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       // Using callbacks (DEPRECATED SINCE 3.0.0)
       if (typeof params === 'function' || typeof cb === 'function') {
         return _superprop_callList(typeof params === 'function' ? null : params, typeof params === 'function' ? params : cb);
@@ -6227,10 +6334,11 @@ class CustomersResource extends CustomersBaseResource {
    * @public ✓ This method is part of the public API
    */
 
+
   update(id, params, cb) {
     var _superprop_callUpdate = (..._args4) => super.update(..._args4);
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       // Using callbacks (DEPRECATED SINCE 3.0.0)
       if (typeof params === 'function' || typeof cb === 'function') {
         if (!startsWith(id, Customer.resourcePrefix)) {
@@ -6264,10 +6372,11 @@ class CustomersResource extends CustomersBaseResource {
    * @public ✓ This method is part of the public API
    */
 
+
   delete(id, params, cb) {
     var _superprop_callDelete = (..._args5) => super.delete(..._args5);
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       // Using callbacks (DEPRECATED SINCE 3.0.0)
       if (typeof params === 'function' || typeof cb === 'function') {
         if (!startsWith(id, Customer.resourcePrefix)) {
@@ -6284,11 +6393,12 @@ class CustomersResource extends CustomersBaseResource {
       return !!(yield _superprop_callDelete(id, params, cb));
     })();
   }
+
 }
 
-_defineProperty(CustomersResource, 'resource', 'customers');
+_defineProperty(CustomersResource, "resource", 'customers');
 
-_defineProperty(CustomersResource, 'model', Customer);
+_defineProperty(CustomersResource, "model", Customer);
 
 /**
  * The `customers_payments` resource.
@@ -6299,11 +6409,11 @@ class CustomersPaymentsResource extends CustomersBaseResource {
   constructor(...args) {
     super(...args);
 
-    _defineProperty(this, 'apiName', 'Customers API (Payments section)');
+    _defineProperty(this, "apiName", 'Customers API (Payments section)');
 
-    _defineProperty(this, 'all', this.list);
+    _defineProperty(this, "all", this.list);
 
-    _defineProperty(this, 'page', this.list);
+    _defineProperty(this, "page", this.list);
   }
 
   /**
@@ -6322,9 +6432,9 @@ class CustomersPaymentsResource extends CustomersBaseResource {
    */
   create(params, cb) {
     var _this = this,
-      _superprop_callCreate = (..._args) => super.create(..._args);
+        _superprop_callCreate = (..._args) => super.create(..._args);
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       // Using callbacks (DEPRECATED SINCE 3.0.0)
       if (typeof params === 'function' || typeof cb === 'function') {
         const customerId = get(params, 'customerId') || _this.parentId;
@@ -6338,11 +6448,14 @@ class CustomersPaymentsResource extends CustomersBaseResource {
         return _superprop_callCreate(typeof params === 'function' ? null : params, typeof params === 'function' ? params : cb);
       } // defaults for .withParent() compatibility (DEPRECATED SINCE 3.0.0)
 
+
       const _defaults = defaults(params, {
-          customerId: _this.parentId,
-        }),
-        { customerId } = _defaults,
-        parameters = _objectWithoutProperties(_defaults, ['customerId']);
+        customerId: _this.parentId
+      }),
+            {
+        customerId
+      } = _defaults,
+            parameters = _objectWithoutProperties(_defaults, ["customerId"]);
 
       _this.setParentId(customerId);
 
@@ -6365,11 +6478,12 @@ class CustomersPaymentsResource extends CustomersBaseResource {
    * @public ✓ This method is part of the public API
    */
 
+
   list(params, cb) {
     var _this2 = this,
-      _superprop_callList = (..._args2) => super.list(..._args2);
+        _superprop_callList = (..._args2) => super.list(..._args2);
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       // Using callbacks (DEPRECATED SINCE 3.0.0)
       if (typeof params === 'function' || typeof cb === 'function') {
         const customerId = get(params, 'customerId') || _this2.parentId;
@@ -6383,11 +6497,14 @@ class CustomersPaymentsResource extends CustomersBaseResource {
         return _superprop_callList(typeof params === 'function' ? null : params, typeof params === 'function' ? params : cb);
       } // defaults for .withParent() compatibility (DEPRECATED SINCE 3.0.0)
 
+
       const _defaults2 = defaults(params, {
-          customerId: _this2.parentId,
-        }),
-        { customerId } = _defaults2,
-        parameters = _objectWithoutProperties(_defaults2, ['customerId']);
+        customerId: _this2.parentId
+      }),
+            {
+        customerId
+      } = _defaults2,
+            parameters = _objectWithoutProperties(_defaults2, ["customerId"]);
 
       if (!startsWith(customerId, Customer.resourcePrefix)) {
         Resource.createApiError('The customer id is invalid');
@@ -6402,10 +6519,11 @@ class CustomersPaymentsResource extends CustomersBaseResource {
    * @deprecated 2.0.0. This method is not supported by the v2 API.
    */
 
+
   get() {
     var _this3 = this;
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       throw new NotImplementedError('This method does not exist', _this3.apiName);
     })();
   }
@@ -6413,10 +6531,11 @@ class CustomersPaymentsResource extends CustomersBaseResource {
    * @deprecated 2.0.0. This method is not supported by the v2 API.
    */
 
+
   update() {
     var _this4 = this;
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       throw new NotImplementedError('This method does not exist', _this4.apiName);
     })();
   }
@@ -6424,10 +6543,11 @@ class CustomersPaymentsResource extends CustomersBaseResource {
    * @deprecated 2.0.0. This method is not supported by the v2 API.
    */
 
+
   delete() {
     var _this5 = this;
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       throw new NotImplementedError('This method does not exist', _this5.apiName);
     })();
   }
@@ -6435,18 +6555,20 @@ class CustomersPaymentsResource extends CustomersBaseResource {
    * @deprecated 2.0.0. This method is not supported by the v2 API.
    */
 
+
   cancel() {
     var _this6 = this;
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       throw new NotImplementedError('This method does not exist', _this6.apiName);
     })();
   }
+
 }
 
-_defineProperty(CustomersPaymentsResource, 'resource', 'customers_payments');
+_defineProperty(CustomersPaymentsResource, "resource", 'customers_payments');
 
-_defineProperty(CustomersPaymentsResource, 'model', Payment);
+_defineProperty(CustomersPaymentsResource, "model", Payment);
 
 /**
  * Mandate Response object
@@ -6455,17 +6577,17 @@ _defineProperty(CustomersPaymentsResource, 'model', Payment);
  */
 let MandateMethod;
 
-(function(MandateMethod) {
-  MandateMethod['directdebit'] = 'directdebit';
-  MandateMethod['creditcard'] = 'creditcard';
+(function (MandateMethod) {
+  MandateMethod["directdebit"] = "directdebit";
+  MandateMethod["creditcard"] = "creditcard";
 })(MandateMethod || (MandateMethod = {}));
 
 let MandateStatus;
 
-(function(MandateStatus) {
-  MandateStatus['valid'] = 'valid';
-  MandateStatus['invalid'] = 'invalid';
-  MandateStatus['pending'] = 'pending';
+(function (MandateStatus) {
+  MandateStatus["valid"] = "valid";
+  MandateStatus["invalid"] = "invalid";
+  MandateStatus["pending"] = "pending";
 })(MandateStatus || (MandateStatus = {}));
 
 /**
@@ -6485,31 +6607,31 @@ class Mandate extends Model {
   constructor(props) {
     super();
 
-    _defineProperty(this, 'resource', 'mandate');
+    _defineProperty(this, "resource", 'mandate');
 
-    _defineProperty(this, 'id', null);
+    _defineProperty(this, "id", null);
 
-    _defineProperty(this, 'status', null);
+    _defineProperty(this, "status", null);
 
-    _defineProperty(this, 'method', null);
+    _defineProperty(this, "method", null);
 
-    _defineProperty(this, 'details', null);
+    _defineProperty(this, "details", null);
 
-    _defineProperty(this, 'mode', null);
+    _defineProperty(this, "mode", null);
 
-    _defineProperty(this, 'mandateReference', null);
+    _defineProperty(this, "mandateReference", null);
 
-    _defineProperty(this, 'signatureDate', null);
+    _defineProperty(this, "signatureDate", null);
 
-    _defineProperty(this, 'createdAt', null);
+    _defineProperty(this, "createdAt", null);
 
-    _defineProperty(this, '_links', {
+    _defineProperty(this, "_links", {
       self: null,
       documentation: null,
-      customer: null,
+      customer: null
     });
 
-    _defineProperty(this, 'testmode', void 0);
+    _defineProperty(this, "testmode", void 0);
 
     Object.assign(this, props);
   }
@@ -6519,12 +6641,14 @@ class Mandate extends Model {
    * @public ✓ This method is part of the public API
    */
 
+
   isValid() {
     return this.status === MandateStatus.valid;
   }
+
 }
 
-_defineProperty(Mandate, 'resourcePrefix', 'mdt_');
+_defineProperty(Mandate, "resourcePrefix", 'mdt_');
 
 /**
  * The `customers_mandates` resource
@@ -6535,15 +6659,15 @@ class CustomersMandatesResource extends CustomersBaseResource {
   constructor(...args) {
     super(...args);
 
-    _defineProperty(this, 'apiName', 'Mandates API');
+    _defineProperty(this, "apiName", 'Mandates API');
 
-    _defineProperty(this, 'all', this.list);
+    _defineProperty(this, "all", this.list);
 
-    _defineProperty(this, 'page', this.list);
+    _defineProperty(this, "page", this.list);
 
-    _defineProperty(this, 'cancel', this.revoke);
+    _defineProperty(this, "cancel", this.revoke);
 
-    _defineProperty(this, 'delete', this.revoke);
+    _defineProperty(this, "delete", this.revoke);
   }
 
   /**
@@ -6562,15 +6686,17 @@ class CustomersMandatesResource extends CustomersBaseResource {
    */
   create(params, cb) {
     var _this = this,
-      _superprop_callCreate = (..._args) => super.create(..._args);
+        _superprop_callCreate = (..._args) => super.create(..._args);
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       // defaults for .withParent() compatibility (DEPRECATED SINCE 3.0.0)
       const _defaults = defaults(params, {
-          customerId: _this.parentId,
-        }),
-        { customerId } = _defaults,
-        parameters = _objectWithoutProperties(_defaults, ['customerId']);
+        customerId: _this.parentId
+      }),
+            {
+        customerId
+      } = _defaults,
+            parameters = _objectWithoutProperties(_defaults, ["customerId"]);
 
       _this.setParentId(customerId);
 
@@ -6594,11 +6720,12 @@ class CustomersMandatesResource extends CustomersBaseResource {
    * @public ✓ This method is part of the public API
    */
 
+
   get(id, params, cb) {
     var _this2 = this,
-      _superprop_callGet = (..._args2) => super.get(..._args2);
+        _superprop_callGet = (..._args2) => super.get(..._args2);
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       // Using callbacks (DEPRECATED SINCE 3.0.0)
       if (typeof params === 'function' || typeof cb === 'function') {
         if (!startsWith(id, Mandate.resourcePrefix)) {
@@ -6616,11 +6743,14 @@ class CustomersMandatesResource extends CustomersBaseResource {
         return _superprop_callGet(id, typeof params === 'function' ? null : params, typeof params === 'function' ? params : cb);
       } // defaults for .withParent() compatibility (DEPRECATED SINCE 3.0.0)
 
+
       const _defaults2 = defaults(params, {
-          customerId: _this2.parentId,
-        }),
-        { customerId } = _defaults2,
-        parameters = _objectWithoutProperties(_defaults2, ['customerId']);
+        customerId: _this2.parentId
+      }),
+            {
+        customerId
+      } = _defaults2,
+            parameters = _objectWithoutProperties(_defaults2, ["customerId"]);
 
       if (!startsWith(id, Mandate.resourcePrefix)) {
         Resource.createApiError('The customers_mandate id is invalid');
@@ -6651,11 +6781,12 @@ class CustomersMandatesResource extends CustomersBaseResource {
    * @public ✓ This method is part of the public API
    */
 
+
   list(params, cb) {
     var _this3 = this,
-      _superprop_callList = (..._args3) => super.list(..._args3);
+        _superprop_callList = (..._args3) => super.list(..._args3);
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       // Using callbacks (DEPRECATED SINCE 3.0.0)
       if (typeof params === 'function' || typeof cb === 'function') {
         const customerId = get(params, 'customerId') || _this3.parentId;
@@ -6669,11 +6800,14 @@ class CustomersMandatesResource extends CustomersBaseResource {
         return _superprop_callList(typeof params === 'function' ? null : params, typeof params === 'function' ? params : cb);
       } // defaults for .withParent() compatibility (DEPRECATED SINCE 3.0.0)
 
+
       const _defaults3 = defaults(params, {
-          customerId: _this3.parentId,
-        }),
-        { customerId } = _defaults3,
-        parameters = _objectWithoutProperties(_defaults3, ['customerId']);
+        customerId: _this3.parentId
+      }),
+            {
+        customerId
+      } = _defaults3,
+            parameters = _objectWithoutProperties(_defaults3, ["customerId"]);
 
       if (!startsWith(customerId, Customer.resourcePrefix)) {
         Resource.createApiError('The customer id is invalid');
@@ -6701,11 +6835,12 @@ class CustomersMandatesResource extends CustomersBaseResource {
    * @public ✓ This method is part of the public API
    */
 
+
   revoke(id, params, cb) {
     var _this4 = this,
-      _superprop_callDelete = (..._args4) => super.delete(..._args4);
+        _superprop_callDelete = (..._args4) => super.delete(..._args4);
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       // Using callbacks (DEPRECATED SINCE 3.0.0)
       if (typeof params === 'function' || typeof cb === 'function') {
         const customerId = get(params, 'customerId') || _this4.parentId;
@@ -6723,8 +6858,11 @@ class CustomersMandatesResource extends CustomersBaseResource {
         return _superprop_callDelete(id, typeof params === 'function' ? null : params, typeof params === 'function' ? params : cb);
       } // defaults for .withParent() compatibility (DEPRECATED SINCE 3.0.0)
 
-      const { customerId } = defaults(params, {
-        customerId: _this4.parentId,
+
+      const {
+        customerId
+      } = defaults(params, {
+        customerId: _this4.parentId
       });
 
       if (!startsWith(id, Mandate.resourcePrefix)) {
@@ -6744,18 +6882,20 @@ class CustomersMandatesResource extends CustomersBaseResource {
    * @deprecated 2.0.0. This method is not supported by the v2 API.
    */
 
+
   update() {
     var _this5 = this;
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       throw new NotImplementedError('This method does not exist', _this5.apiName);
     })();
   }
+
 }
 
-_defineProperty(CustomersMandatesResource, 'resource', 'customers_mandates');
+_defineProperty(CustomersMandatesResource, "resource", 'customers_mandates');
 
-_defineProperty(CustomersMandatesResource, 'model', Mandate);
+_defineProperty(CustomersMandatesResource, "model", Mandate);
 
 /**
  * Subscription Response object.
@@ -6770,12 +6910,12 @@ _defineProperty(CustomersMandatesResource, 'model', Mandate);
  */
 let SubscriptionStatus;
 
-(function(SubscriptionStatus) {
-  SubscriptionStatus['pending'] = 'pending';
-  SubscriptionStatus['active'] = 'active';
-  SubscriptionStatus['canceled'] = 'canceled';
-  SubscriptionStatus['suspended'] = 'suspended';
-  SubscriptionStatus['completed'] = 'completed';
+(function (SubscriptionStatus) {
+  SubscriptionStatus["pending"] = "pending";
+  SubscriptionStatus["active"] = "active";
+  SubscriptionStatus["canceled"] = "canceled";
+  SubscriptionStatus["suspended"] = "suspended";
+  SubscriptionStatus["completed"] = "completed";
 })(SubscriptionStatus || (SubscriptionStatus = {}));
 
 /**
@@ -6795,50 +6935,50 @@ class Subscription extends Model {
   constructor(props) {
     super();
 
-    _defineProperty(this, 'resource', 'subscription');
+    _defineProperty(this, "resource", 'subscription');
 
-    _defineProperty(this, 'id', null);
+    _defineProperty(this, "id", null);
 
-    _defineProperty(this, 'mode', null);
+    _defineProperty(this, "mode", null);
 
-    _defineProperty(this, 'createdAt', null);
+    _defineProperty(this, "createdAt", null);
 
-    _defineProperty(this, 'status', null);
+    _defineProperty(this, "status", null);
 
-    _defineProperty(this, 'amount', {
+    _defineProperty(this, "amount", {
       currency: null,
-      value: null,
+      value: null
     });
 
-    _defineProperty(this, 'times', null);
+    _defineProperty(this, "times", null);
 
-    _defineProperty(this, 'interval', null);
+    _defineProperty(this, "interval", null);
 
-    _defineProperty(this, 'startDate', null);
+    _defineProperty(this, "startDate", null);
 
-    _defineProperty(this, 'description', null);
+    _defineProperty(this, "description", null);
 
-    _defineProperty(this, 'method', null);
+    _defineProperty(this, "method", null);
 
-    _defineProperty(this, 'canceledAt', null);
+    _defineProperty(this, "canceledAt", null);
 
-    _defineProperty(this, 'webhookUrl', null);
+    _defineProperty(this, "webhookUrl", null);
 
-    _defineProperty(this, 'timesRemaining', null);
+    _defineProperty(this, "timesRemaining", null);
 
-    _defineProperty(this, 'metadata', null);
+    _defineProperty(this, "metadata", null);
 
-    _defineProperty(this, '_links', {
+    _defineProperty(this, "_links", {
       self: null,
       documentation: null,
-      customer: null,
+      customer: null
     });
 
-    _defineProperty(this, 'mandateId', null);
+    _defineProperty(this, "mandateId", null);
 
-    _defineProperty(this, 'nextPaymentDate', null);
+    _defineProperty(this, "nextPaymentDate", null);
 
-    _defineProperty(this, 'testmode', void 0);
+    _defineProperty(this, "testmode", void 0);
 
     Object.assign(this, props);
   }
@@ -6847,6 +6987,7 @@ class Subscription extends Model {
    *
    * @public ✓ This method is part of the public API
    */
+
 
   getWebhookUrl() {
     return this.webhookUrl;
@@ -6857,6 +6998,7 @@ class Subscription extends Model {
    * @public ✓ This method is part of the public API
    */
 
+
   isActive() {
     return this.status === SubscriptionStatus.active;
   }
@@ -6865,6 +7007,7 @@ class Subscription extends Model {
    *
    * @public ✓ This method is part of the public API
    */
+
 
   isPending() {
     return this.status === SubscriptionStatus.pending;
@@ -6875,6 +7018,7 @@ class Subscription extends Model {
    * @public ✓ This method is part of the public API
    */
 
+
   isCompleted() {
     return this.status === SubscriptionStatus.completed;
   }
@@ -6883,6 +7027,7 @@ class Subscription extends Model {
    *
    * @public ✓ This method is part of the public API
    */
+
 
   isSuspended() {
     return this.status === SubscriptionStatus.suspended;
@@ -6893,12 +7038,14 @@ class Subscription extends Model {
    * @public ✓ This method is part of the public API
    */
 
+
   isCanceled() {
     return SubscriptionStatus.canceled == this.status;
   }
+
 }
 
-_defineProperty(Subscription, 'resourcePrefix', 'sub_');
+_defineProperty(Subscription, "resourcePrefix", 'sub_');
 
 /**
  * The `customers_subscriptions` resource.
@@ -6910,13 +7057,13 @@ class CustomersSubscriptionsResource extends CustomersBaseResource {
   constructor(...args) {
     super(...args);
 
-    _defineProperty(this, 'apiName', 'Subscriptions API');
+    _defineProperty(this, "apiName", 'Subscriptions API');
 
-    _defineProperty(this, 'delete', this.cancel);
+    _defineProperty(this, "delete", this.cancel);
 
-    _defineProperty(this, 'all', this.list);
+    _defineProperty(this, "all", this.list);
 
-    _defineProperty(this, 'page', this.list);
+    _defineProperty(this, "page", this.list);
   }
 
   /**
@@ -6936,15 +7083,17 @@ class CustomersSubscriptionsResource extends CustomersBaseResource {
    */
   create(params, cb) {
     var _this = this,
-      _superprop_callCreate = (..._args) => super.create(..._args);
+        _superprop_callCreate = (..._args) => super.create(..._args);
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       // defaults for .withParent() compatibility (DEPRECATED SINCE 3.0.0)
       const _defaults = defaults(params, {
-          customerId: _this.parentId,
-        }),
-        { customerId } = _defaults,
-        parameters = _objectWithoutProperties(_defaults, ['customerId']);
+        customerId: _this.parentId
+      }),
+            {
+        customerId
+      } = _defaults,
+            parameters = _objectWithoutProperties(_defaults, ["customerId"]);
 
       if (!startsWith(params.customerId, Customer.resourcePrefix)) {
         Resource.createApiError('The customer id is invalid', cb);
@@ -6972,11 +7121,12 @@ class CustomersSubscriptionsResource extends CustomersBaseResource {
    * @public ✓ This method is part of the public API
    */
 
+
   get(id, params, cb) {
     var _this2 = this,
-      _superprop_callGet = (..._args2) => super.get(..._args2);
+        _superprop_callGet = (..._args2) => super.get(..._args2);
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       // Using callbacks (DEPRECATED SINCE 3.0.0)
       if (typeof params === 'function' || typeof cb === 'function') {
         const customerId = get(params, 'customerId') || _this2.parentId;
@@ -6994,11 +7144,14 @@ class CustomersSubscriptionsResource extends CustomersBaseResource {
         return _superprop_callGet(id, typeof params === 'function' ? null : params, typeof params === 'function' ? params : cb);
       } // defaults for .withParent() compatibility (DEPRECATED SINCE 3.0.0)
 
+
       const _defaults2 = defaults(params, {
-          customerId: _this2.parentId,
-        }),
-        { customerId } = _defaults2,
-        parameters = _objectWithoutProperties(_defaults2, ['customerId']);
+        customerId: _this2.parentId
+      }),
+            {
+        customerId
+      } = _defaults2,
+            parameters = _objectWithoutProperties(_defaults2, ["customerId"]);
 
       if (!startsWith(id, Subscription.resourcePrefix)) {
         Resource.createApiError('The subscription id is invalid');
@@ -7029,11 +7182,12 @@ class CustomersSubscriptionsResource extends CustomersBaseResource {
    * @public ✓ This method is part of the public API
    */
 
+
   list(params, cb) {
     var _this3 = this,
-      _superprop_callList = (..._args3) => super.list(..._args3);
+        _superprop_callList = (..._args3) => super.list(..._args3);
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       // Using callbacks (DEPRECATED SINCE 3.0.0)
       if (typeof params === 'function' || typeof cb === 'function') {
         const customerId = get(params, 'customerId') || _this3.parentId;
@@ -7048,10 +7202,12 @@ class CustomersSubscriptionsResource extends CustomersBaseResource {
       }
 
       const _defaults3 = defaults(params, {
-          customerId: _this3.parentId,
-        }),
-        { customerId } = _defaults3,
-        parameters = _objectWithoutProperties(_defaults3, ['customerId']);
+        customerId: _this3.parentId
+      }),
+            {
+        customerId
+      } = _defaults3,
+            parameters = _objectWithoutProperties(_defaults3, ["customerId"]);
 
       if (!startsWith(customerId, Customer.resourcePrefix)) {
         Resource.createApiError('The customer id is invalid', cb);
@@ -7079,11 +7235,12 @@ class CustomersSubscriptionsResource extends CustomersBaseResource {
    * @public ✓ This method is part of the public API
    */
 
+
   update(id, params, cb) {
     var _this4 = this,
-      _superprop_callUpdate = (..._args4) => super.update(..._args4);
+        _superprop_callUpdate = (..._args4) => super.update(..._args4);
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       // Using callbacks (DEPRECATED SINCE 3.0.0)
       if (typeof params === 'function' || typeof cb === 'function') {
         const customerId = get(params, 'customerId') || _this4.parentId;
@@ -7105,11 +7262,14 @@ class CustomersSubscriptionsResource extends CustomersBaseResource {
         Resource.createApiError('The subscription id is invalid');
       } // defaults for .withParent() compatibility (DEPRECATED SINCE 3.0.0)
 
+
       const _defaults4 = defaults(params, {
-          customerId: _this4.parentId,
-        }),
-        { customerId } = _defaults4,
-        parameters = _objectWithoutProperties(_defaults4, ['customerId']);
+        customerId: _this4.parentId
+      }),
+            {
+        customerId
+      } = _defaults4,
+            parameters = _objectWithoutProperties(_defaults4, ["customerId"]);
 
       if (!startsWith(params.customerId, Customer.resourcePrefix)) {
         Resource.createApiError('The subscription id is invalid');
@@ -7137,11 +7297,12 @@ class CustomersSubscriptionsResource extends CustomersBaseResource {
    * @public ✓ This method is part of the public API
    */
 
+
   cancel(id, params, cb) {
     var _this5 = this,
-      _superprop_callDelete = (..._args5) => super.delete(..._args5);
+        _superprop_callDelete = (..._args5) => super.delete(..._args5);
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       // Using callbacks (DEPRECATED SINCE 3.0.0)
       if (typeof params === 'function' || typeof cb === 'function') {
         if (!startsWith(id, Subscription.resourcePrefix)) {
@@ -7163,11 +7324,14 @@ class CustomersSubscriptionsResource extends CustomersBaseResource {
         Resource.createApiError('The subscription id is invalid');
       } // defaults for .withParent() compatibility (DEPRECATED SINCE 3.0.0)
 
+
       const _defaults5 = defaults(params, {
-          customerId: _this5.parentId,
-        }),
-        { customerId } = _defaults5,
-        parameters = _objectWithoutProperties(_defaults5, ['customerId']);
+        customerId: _this5.parentId
+      }),
+            {
+        customerId
+      } = _defaults5,
+            parameters = _objectWithoutProperties(_defaults5, ["customerId"]);
 
       if (!startsWith(params.customerId, Customer.resourcePrefix)) {
         Resource.createApiError('The customer id is invalid');
@@ -7178,11 +7342,12 @@ class CustomersSubscriptionsResource extends CustomersBaseResource {
       return _superprop_callDelete(id, parameters, cb);
     })();
   }
+
 }
 
-_defineProperty(CustomersSubscriptionsResource, 'resource', 'customers_subscriptions');
+_defineProperty(CustomersSubscriptionsResource, "resource", 'customers_subscriptions');
 
-_defineProperty(CustomersSubscriptionsResource, 'model', Subscription);
+_defineProperty(CustomersSubscriptionsResource, "model", Subscription);
 
 /**
  * The `chargebacks` resource
@@ -7194,11 +7359,11 @@ class ChargebacksResource extends Resource {
   constructor(...args) {
     super(...args);
 
-    _defineProperty(this, 'apiName', 'Chargebacks API');
+    _defineProperty(this, "apiName", 'Chargebacks API');
 
-    _defineProperty(this, 'all', this.list);
+    _defineProperty(this, "all", this.list);
 
-    _defineProperty(this, 'page', this.list);
+    _defineProperty(this, "page", this.list);
   }
 
   /**
@@ -7219,7 +7384,7 @@ class ChargebacksResource extends Resource {
   list(params, cb) {
     var _superprop_callList = (..._args) => super.list(..._args);
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       // Using callbacks (DEPRECATED SINCE 3.0.0)
       if (typeof params === 'function' || typeof cb === 'function') {
         return _superprop_callList(typeof params === 'function' ? null : params, typeof params === 'function' ? params : cb);
@@ -7232,10 +7397,11 @@ class ChargebacksResource extends Resource {
    * @deprecated 2.0.0. This method is not supported by the v2 API.
    */
 
+
   create() {
     var _this = this;
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       throw new NotImplementedError('This method does not exist', _this.apiName);
     })();
   }
@@ -7243,10 +7409,11 @@ class ChargebacksResource extends Resource {
    * @deprecated 2.0.0. This method is not supported by the v2 API.
    */
 
+
   update(id, data, cb) {
     var _this2 = this;
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       throw new NotImplementedError('This method does not exist', _this2.apiName);
     })();
   }
@@ -7254,10 +7421,11 @@ class ChargebacksResource extends Resource {
    * @deprecated 2.0.0. This method is not supported by the v2 API.
    */
 
+
   get(id, params, cb) {
     var _this3 = this;
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       throw new NotImplementedError('This method does not exist', _this3.apiName);
     })();
   }
@@ -7265,10 +7433,11 @@ class ChargebacksResource extends Resource {
    * @deprecated 2.0.0. This method is not supported by the v2 API.
    */
 
+
   cancel() {
     var _this4 = this;
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       throw new NotImplementedError('This method does not exist', _this4.apiName);
     })();
   }
@@ -7276,18 +7445,20 @@ class ChargebacksResource extends Resource {
    * @deprecated 2.0.0. This method is not supported by the v2 API.
    */
 
+
   delete() {
     var _this5 = this;
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       throw new NotImplementedError('This method does not exist', _this5.apiName);
     })();
   }
+
 }
 
-_defineProperty(ChargebacksResource, 'resource', 'chargebacks');
+_defineProperty(ChargebacksResource, "resource", 'chargebacks');
 
-_defineProperty(ChargebacksResource, 'model', Chargeback);
+_defineProperty(ChargebacksResource, "model", Chargeback);
 
 /**
  * The `Shipment` model
@@ -7305,31 +7476,32 @@ class Shipment extends Model {
   constructor(props) {
     super();
 
-    _defineProperty(this, 'resource', 'shipment');
+    _defineProperty(this, "resource", 'shipment');
 
-    _defineProperty(this, 'id', null);
+    _defineProperty(this, "id", null);
 
-    _defineProperty(this, 'orderId', null);
+    _defineProperty(this, "orderId", null);
 
-    _defineProperty(this, 'createdAt', null);
+    _defineProperty(this, "createdAt", null);
 
-    _defineProperty(this, 'tracking', null);
+    _defineProperty(this, "tracking", null);
 
-    _defineProperty(this, 'lines', null);
+    _defineProperty(this, "lines", null);
 
-    _defineProperty(this, '_links', {
+    _defineProperty(this, "_links", {
       self: null,
       order: null,
-      documentation: null,
+      documentation: null
     });
 
-    _defineProperty(this, 'testmode', void 0);
+    _defineProperty(this, "testmode", void 0);
 
     Object.assign(this, props);
   }
+
 }
 
-_defineProperty(Shipment, 'resourcePrefix', 'shp_');
+_defineProperty(Shipment, "resourcePrefix", 'shp_');
 
 /**
  * Orders base resource
@@ -7350,6 +7522,7 @@ class OrdersBaseResource extends Resource {
       this.setParentId(params.orderId);
     }
   }
+
 }
 
 /**
@@ -7359,21 +7532,21 @@ class OrdersBaseResource extends Resource {
  */
 let OrderStatus;
 
-(function(OrderStatus) {
-  OrderStatus['created'] = 'created';
-  OrderStatus['paid'] = 'paid';
-  OrderStatus['authorized'] = 'authorized';
-  OrderStatus['canceled'] = 'canceled';
-  OrderStatus['shipping'] = 'shipping';
-  OrderStatus['completed'] = 'completed';
-  OrderStatus['expired'] = 'expired';
-  OrderStatus['pending'] = 'pending';
+(function (OrderStatus) {
+  OrderStatus["created"] = "created";
+  OrderStatus["paid"] = "paid";
+  OrderStatus["authorized"] = "authorized";
+  OrderStatus["canceled"] = "canceled";
+  OrderStatus["shipping"] = "shipping";
+  OrderStatus["completed"] = "completed";
+  OrderStatus["expired"] = "expired";
+  OrderStatus["pending"] = "pending";
 })(OrderStatus || (OrderStatus = {}));
 
 let OrderEmbed;
 
-(function(OrderEmbed) {
-  OrderEmbed['payments'] = 'payments';
+(function (OrderEmbed) {
+  OrderEmbed["payments"] = "payments";
 })(OrderEmbed || (OrderEmbed = {}));
 
 /**
@@ -7390,67 +7563,67 @@ class Order extends Model {
   constructor(props) {
     super();
 
-    _defineProperty(this, 'resource', 'order');
+    _defineProperty(this, "resource", 'order');
 
-    _defineProperty(this, 'id', null);
+    _defineProperty(this, "id", null);
 
-    _defineProperty(this, 'amount', null);
+    _defineProperty(this, "amount", null);
 
-    _defineProperty(this, 'profileId', null);
+    _defineProperty(this, "profileId", null);
 
-    _defineProperty(this, 'createdAt', null);
+    _defineProperty(this, "createdAt", null);
 
-    _defineProperty(this, 'method', null);
+    _defineProperty(this, "method", null);
 
-    _defineProperty(this, 'mode', null);
+    _defineProperty(this, "mode", null);
 
-    _defineProperty(this, 'status', null);
+    _defineProperty(this, "status", null);
 
-    _defineProperty(this, 'isCancelable', null);
+    _defineProperty(this, "isCancelable", null);
 
-    _defineProperty(this, 'billingAddress', null);
+    _defineProperty(this, "billingAddress", null);
 
-    _defineProperty(this, 'orderNumber', null);
+    _defineProperty(this, "orderNumber", null);
 
-    _defineProperty(this, 'shippingAddress', null);
+    _defineProperty(this, "shippingAddress", null);
 
-    _defineProperty(this, 'locale', null);
+    _defineProperty(this, "locale", null);
 
-    _defineProperty(this, 'metadata', null);
+    _defineProperty(this, "metadata", null);
 
-    _defineProperty(this, 'redirectUrl', null);
+    _defineProperty(this, "redirectUrl", null);
 
-    _defineProperty(this, 'lines', null);
+    _defineProperty(this, "lines", null);
 
-    _defineProperty(this, '_links', {
+    _defineProperty(this, "_links", {
       self: null,
       documentation: null,
       checkout: null,
       payment: null,
-      settlement: null,
+      settlement: null
     });
 
-    _defineProperty(this, '_embedded', null);
+    _defineProperty(this, "_embedded", null);
 
-    _defineProperty(this, 'webhookUrl', void 0);
+    _defineProperty(this, "webhookUrl", void 0);
 
-    _defineProperty(this, 'expiresAt', void 0);
+    _defineProperty(this, "expiresAt", void 0);
 
-    _defineProperty(this, 'expiredAt', void 0);
+    _defineProperty(this, "expiredAt", void 0);
 
-    _defineProperty(this, 'paidAt', void 0);
+    _defineProperty(this, "paidAt", void 0);
 
-    _defineProperty(this, 'authorizedAt', void 0);
+    _defineProperty(this, "authorizedAt", void 0);
 
-    _defineProperty(this, 'canceledAt', void 0);
+    _defineProperty(this, "canceledAt", void 0);
 
-    _defineProperty(this, 'completedAt', void 0);
+    _defineProperty(this, "completedAt", void 0);
 
-    _defineProperty(this, 'amountCaptured', void 0);
+    _defineProperty(this, "amountCaptured", void 0);
 
-    _defineProperty(this, 'amountRefunded', void 0);
+    _defineProperty(this, "amountRefunded", void 0);
 
-    _defineProperty(this, 'consumerDateOfBirth', void 0);
+    _defineProperty(this, "consumerDateOfBirth", void 0);
 
     Object.assign(this, props);
 
@@ -7476,6 +7649,7 @@ class Order extends Model {
    * @public ✓ This method is part of the public API
    */
 
+
   isCreated() {
     return this.status == OrderStatus.created;
   }
@@ -7485,6 +7659,7 @@ class Order extends Model {
    *
    * @public ✓ This method is part of the public API
    */
+
 
   isPaid() {
     return this.status == OrderStatus.paid;
@@ -7496,6 +7671,7 @@ class Order extends Model {
    * @public ✓ This method is part of the public API
    */
 
+
   isAuthorized() {
     return this.status == OrderStatus.authorized;
   }
@@ -7504,6 +7680,7 @@ class Order extends Model {
    *
    * @public ✓ This method is part of the public API
    */
+
 
   isCanceled() {
     return this.status == OrderStatus.canceled;
@@ -7515,6 +7692,7 @@ class Order extends Model {
    * @public ✓ This method is part of the public API
    */
 
+
   isShipping() {
     return this.status == OrderStatus.shipping;
   }
@@ -7523,6 +7701,7 @@ class Order extends Model {
    *
    * @public ✓ This method is part of the public API
    */
+
 
   isCompleted() {
     return this.status == OrderStatus.completed;
@@ -7533,6 +7712,7 @@ class Order extends Model {
    * @public ✓ This method is part of the public API
    */
 
+
   isExpired() {
     return this.status == OrderStatus.expired;
   }
@@ -7541,6 +7721,7 @@ class Order extends Model {
    *
    * @public ✓ This method is part of the public API
    */
+
 
   isPending() {
     return this.status == OrderStatus.pending;
@@ -7557,6 +7738,7 @@ class Order extends Model {
    * @public ✓ This method is part of the public API
    */
 
+
   getCheckoutUrl() {
     if (this._links.checkout == undefined) {
       return null;
@@ -7564,9 +7746,10 @@ class Order extends Model {
 
     return this._links.checkout.href;
   }
+
 }
 
-_defineProperty(Order, 'resourcePrefix', 'ord_');
+_defineProperty(Order, "resourcePrefix", 'ord_');
 
 /**
  * The `order_shipments` resource
@@ -7578,11 +7761,11 @@ class OrdersShipmentsResource extends OrdersBaseResource {
   constructor(...args) {
     super(...args);
 
-    _defineProperty(this, 'apiName', 'Shipments API');
+    _defineProperty(this, "apiName", 'Shipments API');
 
-    _defineProperty(this, 'all', this.list);
+    _defineProperty(this, "all", this.list);
 
-    _defineProperty(this, 'page', this.list);
+    _defineProperty(this, "page", this.list);
   }
 
   /**
@@ -7610,9 +7793,9 @@ class OrdersShipmentsResource extends OrdersBaseResource {
    */
   create(params, cb) {
     var _this = this,
-      _superprop_callCreate = (..._args) => super.create(..._args);
+        _superprop_callCreate = (..._args) => super.create(..._args);
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       // Using callbacks (DEPRECATED SINCE 3.0.0)
       if (typeof params === 'function' || typeof cb === 'function') {
         const orderId = get(params, 'orderId') || _this.parentId;
@@ -7626,11 +7809,14 @@ class OrdersShipmentsResource extends OrdersBaseResource {
         return _superprop_callCreate(typeof params === 'function' ? null : params, typeof params === 'function' ? params : cb);
       } // defaults for .withParent() compatibility (DEPRECATED SINCE 3.0.0)
 
+
       const _defaults = defaults(params, {
-          orderId: _this.parentId,
-        }),
-        { orderId } = _defaults,
-        parameters = _objectWithoutProperties(_defaults, ['orderId']);
+        orderId: _this.parentId
+      }),
+            {
+        orderId
+      } = _defaults,
+            parameters = _objectWithoutProperties(_defaults, ["orderId"]);
 
       if (!startsWith(orderId, Order.resourcePrefix)) {
         Resource.createApiError('The order id is invalid', typeof params === 'function' ? params : cb);
@@ -7657,12 +7843,13 @@ class OrdersShipmentsResource extends OrdersBaseResource {
    * @public ✓ This method is part of the public API
    */
 
+
   update(id, params, cb) {
     var _this2 = this,
-      _superprop_callGet = (..._args2) => super.get(..._args2),
-      _superprop_callUpdate = (..._args3) => super.update(..._args3);
+        _superprop_callGet = (..._args2) => super.get(..._args2),
+        _superprop_callUpdate = (..._args3) => super.update(..._args3);
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       // Using callbacks (DEPRECATED SINCE 3.0.0)
       if (typeof params === 'function' || typeof cb === 'function') {
         if (!startsWith(id, Shipment.resourcePrefix)) {
@@ -7684,11 +7871,14 @@ class OrdersShipmentsResource extends OrdersBaseResource {
         Resource.createApiError('The orders_shipments id is invalid');
       } // defaults for .withParent() compatibility (DEPRECATED SINCE 3.0.0)
 
+
       const _defaults2 = defaults(params, {
-          orderId: _this2.parentId,
-        }),
-        { orderId } = _defaults2,
-        parameters = _objectWithoutProperties(_defaults2, ['orderId']);
+        orderId: _this2.parentId
+      }),
+            {
+        orderId
+      } = _defaults2,
+            parameters = _objectWithoutProperties(_defaults2, ["orderId"]);
 
       if (!startsWith(orderId, Order.resourcePrefix)) {
         Resource.createApiError('The order id is invalid');
@@ -7715,11 +7905,12 @@ class OrdersShipmentsResource extends OrdersBaseResource {
    * @public ✓ This method is part of the public API
    */
 
+
   get(id, params, cb) {
     var _this3 = this,
-      _superprop_callGet2 = (..._args4) => super.get(..._args4);
+        _superprop_callGet2 = (..._args4) => super.get(..._args4);
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       // Using callbacks (DEPRECATED SINCE 3.0.0)
       if (typeof params === 'function' || typeof cb === 'function') {
         if (!startsWith(id, Shipment.resourcePrefix)) {
@@ -7741,11 +7932,14 @@ class OrdersShipmentsResource extends OrdersBaseResource {
         Resource.createApiError('The orders_shipments id is invalid', cb);
       } // defaults for .withParent() compatibility (DEPRECATED SINCE 3.0.0)
 
+
       const _defaults3 = defaults(params, {
-          orderId: _this3.parentId,
-        }),
-        { orderId } = _defaults3,
-        parameters = _objectWithoutProperties(_defaults3, ['orderId']);
+        orderId: _this3.parentId
+      }),
+            {
+        orderId
+      } = _defaults3,
+            parameters = _objectWithoutProperties(_defaults3, ["orderId"]);
 
       if (!startsWith(orderId, Order.resourcePrefix)) {
         Resource.createApiError('The order id is invalid');
@@ -7772,11 +7966,12 @@ class OrdersShipmentsResource extends OrdersBaseResource {
    * @public ✓ This method is part of the public API
    */
 
+
   list(params, cb) {
     var _this4 = this,
-      _superprop_callList = (..._args5) => super.list(..._args5);
+        _superprop_callList = (..._args5) => super.list(..._args5);
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       // Using callbacks (DEPRECATED SINCE 3.0.0)
       if (typeof params === 'function' || typeof cb === 'function') {
         const orderId = get(params, 'orderId') || _this4.parentId;
@@ -7790,11 +7985,14 @@ class OrdersShipmentsResource extends OrdersBaseResource {
         return _superprop_callList(typeof params === 'function' ? null : params, typeof params === 'function' ? params : cb);
       } // defaults for .withParent() compatibility (DEPRECATED SINCE 3.0.0)
 
+
       const _defaults4 = defaults(params, {
-          orderId: _this4.parentId,
-        }),
-        { orderId } = _defaults4,
-        parameters = _objectWithoutProperties(_defaults4, ['orderId']);
+        orderId: _this4.parentId
+      }),
+            {
+        orderId
+      } = _defaults4,
+            parameters = _objectWithoutProperties(_defaults4, ["orderId"]);
 
       if (!startsWith(orderId, Order.resourcePrefix)) {
         Resource.createApiError('The order id is invalid', typeof params === 'function' ? params : cb);
@@ -7809,10 +8007,11 @@ class OrdersShipmentsResource extends OrdersBaseResource {
    * @deprecated 2.0.0. This method is not supported by the v2 API.
    */
 
+
   cancel() {
     var _this5 = this;
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       throw new NotImplementedError('This method does not exist', _this5.apiName);
     })();
   }
@@ -7820,18 +8019,20 @@ class OrdersShipmentsResource extends OrdersBaseResource {
    * @deprecated 2.0.0. This method is not supported by the v2 API.
    */
 
+
   delete() {
     var _this6 = this;
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       throw new NotImplementedError('This method does not exist', _this6.apiName);
     })();
   }
+
 }
 
-_defineProperty(OrdersShipmentsResource, 'resource', 'orders_shipments');
+_defineProperty(OrdersShipmentsResource, "resource", 'orders_shipments');
 
-_defineProperty(OrdersShipmentsResource, 'model', Shipment);
+_defineProperty(OrdersShipmentsResource, "model", Shipment);
 
 /**
  * The `orders_refunds` resource
@@ -7843,11 +8044,11 @@ class OrdersRefundsResource extends OrdersBaseResource {
   constructor(...args) {
     super(...args);
 
-    _defineProperty(this, 'apiName', 'Refunds API');
+    _defineProperty(this, "apiName", 'Refunds API');
 
-    _defineProperty(this, 'all', this.list);
+    _defineProperty(this, "all", this.list);
 
-    _defineProperty(this, 'page', this.list);
+    _defineProperty(this, "page", this.list);
   }
 
   /**
@@ -7866,9 +8067,9 @@ class OrdersRefundsResource extends OrdersBaseResource {
    */
   create(params, cb) {
     var _this = this,
-      _superprop_callCreate = (..._args) => super.create(..._args);
+        _superprop_callCreate = (..._args) => super.create(..._args);
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       // Using callbacks (DEPRECATED SINCE 3.0.0)
       if (typeof params === 'function' || typeof cb === 'function') {
         const orderId = get(params, 'orderId') || _this.parentId;
@@ -7882,11 +8083,14 @@ class OrdersRefundsResource extends OrdersBaseResource {
         return _superprop_callCreate(typeof params === 'function' ? null : params, typeof params === 'function' ? params : cb);
       } // defaults for .withParent() compatibility (DEPRECATED SINCE 3.0.0)
 
+
       const _defaults = defaults(params, {
-          orderId: _this.parentId,
-        }),
-        { orderId } = _defaults,
-        parameters = _objectWithoutProperties(_defaults, ['orderId']);
+        orderId: _this.parentId
+      }),
+            {
+        orderId
+      } = _defaults,
+            parameters = _objectWithoutProperties(_defaults, ["orderId"]);
 
       if (!startsWith(orderId, Order.resourcePrefix)) {
         Resource.createApiError('The order id is invalid', cb);
@@ -7913,11 +8117,12 @@ class OrdersRefundsResource extends OrdersBaseResource {
    * @public ✓ This method is part of the public API
    */
 
+
   list(params, cb) {
     var _this2 = this,
-      _superprop_callList = (..._args2) => super.list(..._args2);
+        _superprop_callList = (..._args2) => super.list(..._args2);
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       // Using callbacks (DEPRECATED SINCE 3.0.0)
       if (typeof params === 'function' || typeof cb === 'function') {
         const orderId = get(params, 'orderId') || _this2.parentId;
@@ -7931,11 +8136,14 @@ class OrdersRefundsResource extends OrdersBaseResource {
         return _superprop_callList(typeof params === 'function' ? null : params, typeof params === 'function' ? params : cb);
       } // defaults for .withParent() compatibility (DEPRECATED SINCE 3.0.0)
 
+
       const _defaults2 = defaults(params, {
-          orderId: _this2.parentId,
-        }),
-        { orderId } = _defaults2,
-        parameters = _objectWithoutProperties(_defaults2, ['orderId']);
+        orderId: _this2.parentId
+      }),
+            {
+        orderId
+      } = _defaults2,
+            parameters = _objectWithoutProperties(_defaults2, ["orderId"]);
 
       if (!startsWith(orderId, Order.resourcePrefix)) {
         Resource.createApiError('The order id is invalid');
@@ -7950,10 +8158,11 @@ class OrdersRefundsResource extends OrdersBaseResource {
    * @deprecated 2.0.0. This method is not supported by the v2 API.
    */
 
+
   get() {
     var _this3 = this;
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       throw new NotImplementedError('This method does not exist', _this3.apiName);
     })();
   }
@@ -7961,10 +8170,11 @@ class OrdersRefundsResource extends OrdersBaseResource {
    * @deprecated 2.0.0. This method is not supported by the v2 API.
    */
 
+
   update() {
     var _this4 = this;
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       throw new NotImplementedError('This method does not exist', _this4.apiName);
     })();
   }
@@ -7972,10 +8182,11 @@ class OrdersRefundsResource extends OrdersBaseResource {
    * @deprecated 2.0.0. This method is not supported by the v2 API.
    */
 
+
   delete() {
     var _this5 = this;
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       throw new NotImplementedError('This method does not exist', _this5.apiName);
     })();
   }
@@ -7983,18 +8194,150 @@ class OrdersRefundsResource extends OrdersBaseResource {
    * @deprecated 2.0.0. This method is not supported by the v2 API.
    */
 
+
   cancel() {
     var _this6 = this;
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       throw new NotImplementedError('This method does not exist', _this6.apiName);
     })();
   }
+
 }
 
-_defineProperty(OrdersRefundsResource, 'resource', 'orders_refunds');
+_defineProperty(OrdersRefundsResource, "resource", 'orders_refunds');
 
-_defineProperty(OrdersRefundsResource, 'model', Refund);
+_defineProperty(OrdersRefundsResource, "model", Refund);
+
+/**
+ * The `orders_payments` resource
+ *
+ * @since 3.1.0
+ */
+class OrdersPaymentsResource extends OrdersBaseResource {
+  constructor(...args) {
+    super(...args);
+
+    _defineProperty(this, "apiName", 'Orders API (Order Payment section)');
+  }
+
+  /**
+   * Create order payment
+   *
+   * @param params - Create order payment parameters
+   *                 (DEPRECATED SINCE 3.0.0) Can also be a callback function
+   * @param cb - (DEPRECATED SINCE 3.0.0) Callback function, can be used instead of the returned `Promise` object
+   *
+   * @returns The created Payment object
+   *
+   * @since 3.1.0
+   *
+   * @see https://docs.mollie.com/reference/v2/orders-api/create-order-payment
+   *
+   * @public ✓ This method is part of the public API
+   */
+  create(params, cb) {
+    var _this = this,
+        _superprop_callCreate = (..._args) => super.create(..._args);
+
+    return _asyncToGenerator(function* () {
+      // Using callbacks (DEPRECATED SINCE 3.0.0)
+      if (typeof params === 'function' || typeof cb === 'function') {
+        const orderId = get(params, 'orderId') || _this.parentId;
+
+        if (!startsWith(orderId, Order.resourcePrefix)) {
+          Resource.createApiError('The order id is invalid', typeof params === 'function' ? params : cb);
+        }
+
+        _this.setParentId(orderId);
+
+        return _superprop_callCreate(typeof params === 'function' ? null : params, typeof params === 'function' ? params : cb);
+      } // defaults for .withParent() compatibility (DEPRECATED SINCE 3.0.0)
+
+
+      const _defaults = defaults(params, {
+        orderId: _this.parentId
+      }),
+            {
+        orderId
+      } = _defaults,
+            parameters = _objectWithoutProperties(_defaults, ["orderId"]);
+
+      if (!startsWith(orderId, Order.resourcePrefix)) {
+        Resource.createApiError('The order id is invalid', cb);
+      }
+
+      _this.setParentId(orderId);
+
+      return _superprop_callCreate(parameters, cb);
+    })();
+  }
+  /**
+   * @deprecated 2.0.0. This method is not supported by the v2 API.
+   */
+
+
+  list() {
+    var _this2 = this;
+
+    return _asyncToGenerator(function* () {
+      throw new NotImplementedError('This method does not exist', _this2.apiName);
+    })();
+  }
+  /**
+   * @deprecated 2.0.0. This method is not supported by the v2 API.
+   */
+
+
+  get() {
+    var _this3 = this;
+
+    return _asyncToGenerator(function* () {
+      throw new NotImplementedError('This method does not exist', _this3.apiName);
+    })();
+  }
+  /**
+   * @deprecated 2.0.0. This method is not supported by the v2 API.
+   */
+
+
+  update() {
+    var _this4 = this;
+
+    return _asyncToGenerator(function* () {
+      throw new NotImplementedError('This method does not exist', _this4.apiName);
+    })();
+  }
+  /**
+   * @deprecated 2.0.0. This method is not supported by the v2 API.
+   */
+
+
+  delete() {
+    var _this5 = this;
+
+    return _asyncToGenerator(function* () {
+      throw new NotImplementedError('This method does not exist', _this5.apiName);
+    })();
+  }
+  /**
+   * @deprecated 2.0.0. This method is not supported by the v2 API.
+   */
+
+
+  cancel() {
+    var _this6 = this;
+
+    return _asyncToGenerator(function* () {
+      throw new NotImplementedError('This method does not exist', _this6.apiName);
+    })();
+  }
+
+}
+
+_defineProperty(OrdersPaymentsResource, "resource", 'orders_payments');
+
+_defineProperty(OrdersPaymentsResource, "model", Payment);
 
 /**
  * The `orders` resource
@@ -8005,13 +8348,13 @@ class Orders extends Resource {
   constructor(...args) {
     super(...args);
 
-    _defineProperty(this, 'apiName', 'Orders API');
+    _defineProperty(this, "apiName", 'Orders API');
 
-    _defineProperty(this, 'delete', this.cancel);
+    _defineProperty(this, "delete", this.cancel);
 
-    _defineProperty(this, 'all', this.list);
+    _defineProperty(this, "all", this.list);
 
-    _defineProperty(this, 'page', this.list);
+    _defineProperty(this, "page", this.list);
   }
 
   /**
@@ -8045,7 +8388,7 @@ class Orders extends Resource {
   create(params, cb) {
     var _superprop_callCreate = (..._args) => super.create(..._args);
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       return _superprop_callCreate(params, cb);
     })();
   }
@@ -8066,10 +8409,11 @@ class Orders extends Resource {
    * @public ✓ This method is part of the public API
    */
 
+
   get(id, params, cb) {
     var _superprop_callGet = (..._args2) => super.get(..._args2);
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       // Using callbacks (DEPRECATED SINCE 3.0.0)
       if (typeof params === 'function' || typeof cb === 'function') {
         if (!startsWith(id, Order.resourcePrefix)) {
@@ -8102,10 +8446,11 @@ class Orders extends Resource {
    * @public ✓ This method is part of the public API
    */
 
+
   list(params, cb) {
     var _superprop_callList = (..._args3) => super.list(..._args3);
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       // Using callbacks (DEPRECATED SINCE 3.0.0)
       if (typeof params === 'function' || typeof cb === 'function') {
         return _superprop_callList(typeof params === 'function' ? null : params, typeof params === 'function' ? params : cb);
@@ -8131,10 +8476,11 @@ class Orders extends Resource {
    * @public ✓ This method is part of the public API
    */
 
+
   update(id, params, cb) {
     var _superprop_callUpdate = (..._args4) => super.update(..._args4);
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       // Using callbacks (DEPRECATED SINCE 3.0.0)
       if (typeof params === 'function' || typeof cb === 'function') {
         if (!startsWith(id, Order.resourcePrefix)) {
@@ -8168,13 +8514,15 @@ class Orders extends Resource {
    * @public ✓ This method is part of the public API
    */
 
+
   cancel(id, params, cb) {
     var _superprop_callDelete = (..._args5) => super.delete(..._args5);
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       if (!startsWith(id, Order.resourcePrefix)) {
         Resource.createApiError('The order id is invalid', cb);
       } // Using callbacks (DEPRECATED SINCE 3.0.0)
+
 
       if (typeof params === 'function' || typeof cb === 'function') {
         return _superprop_callDelete(id, typeof params === 'function' ? null : params, typeof params === 'function' ? params : cb);
@@ -8183,11 +8531,12 @@ class Orders extends Resource {
       return _superprop_callDelete(id, params);
     })();
   }
+
 }
 
-_defineProperty(Orders, 'resource', 'orders');
+_defineProperty(Orders, "resource", 'orders');
 
-_defineProperty(Orders, 'model', Order);
+_defineProperty(Orders, "model", Order);
 
 /**
  * The `OrderLine` model
@@ -8203,67 +8552,68 @@ class OrderLine extends Model {
   constructor(props) {
     super();
 
-    _defineProperty(this, 'resource', 'orderline');
+    _defineProperty(this, "resource", 'orderline');
 
-    _defineProperty(this, 'id', null);
+    _defineProperty(this, "id", null);
 
-    _defineProperty(this, 'name', null);
+    _defineProperty(this, "name", null);
 
-    _defineProperty(this, 'quantity', null);
+    _defineProperty(this, "quantity", null);
 
-    _defineProperty(this, 'unitPrice', null);
+    _defineProperty(this, "unitPrice", null);
 
-    _defineProperty(this, 'discountAmount', null);
+    _defineProperty(this, "discountAmount", null);
 
-    _defineProperty(this, 'totalAmount', null);
+    _defineProperty(this, "totalAmount", null);
 
-    _defineProperty(this, 'vatRate', null);
+    _defineProperty(this, "vatRate", null);
 
-    _defineProperty(this, 'vatAmount', null);
+    _defineProperty(this, "vatAmount", null);
 
-    _defineProperty(this, 'sku', null);
+    _defineProperty(this, "sku", null);
 
-    _defineProperty(this, 'imageUrl', null);
+    _defineProperty(this, "imageUrl", null);
 
-    _defineProperty(this, 'productUrl', null);
+    _defineProperty(this, "productUrl", null);
 
-    _defineProperty(this, '_links', void 0);
+    _defineProperty(this, "_links", void 0);
 
-    _defineProperty(this, 'orderId', null);
+    _defineProperty(this, "orderId", null);
 
-    _defineProperty(this, 'type', null);
+    _defineProperty(this, "type", null);
 
-    _defineProperty(this, 'status', null);
+    _defineProperty(this, "status", null);
 
-    _defineProperty(this, 'isCancelable', null);
+    _defineProperty(this, "isCancelable", null);
 
-    _defineProperty(this, 'quantityShipped', null);
+    _defineProperty(this, "quantityShipped", null);
 
-    _defineProperty(this, 'amountShipped', null);
+    _defineProperty(this, "amountShipped", null);
 
-    _defineProperty(this, 'quantityRefunded', null);
+    _defineProperty(this, "quantityRefunded", null);
 
-    _defineProperty(this, 'amountRefunded', null);
+    _defineProperty(this, "amountRefunded", null);
 
-    _defineProperty(this, 'quantityCanceled', null);
+    _defineProperty(this, "quantityCanceled", null);
 
-    _defineProperty(this, 'amountCanceled', null);
+    _defineProperty(this, "amountCanceled", null);
 
-    _defineProperty(this, 'shippableQuantity', null);
+    _defineProperty(this, "shippableQuantity", null);
 
-    _defineProperty(this, 'refundableQuantity', null);
+    _defineProperty(this, "refundableQuantity", null);
 
-    _defineProperty(this, 'cancelableQuantity', null);
+    _defineProperty(this, "cancelableQuantity", null);
 
-    _defineProperty(this, 'createdAt', null);
+    _defineProperty(this, "createdAt", null);
 
-    _defineProperty(this, 'metadata', null);
+    _defineProperty(this, "metadata", null);
 
     Object.assign(this, props);
   }
+
 }
 
-_defineProperty(OrderLine, 'resourcePrefix', 'odl_');
+_defineProperty(OrderLine, "resourcePrefix", 'odl_');
 
 /**
  * The `orders_lines` resource
@@ -8275,9 +8625,9 @@ class OrdersLinesResource extends OrdersBaseResource {
   constructor(...args) {
     super(...args);
 
-    _defineProperty(this, 'apiName', 'Orders API (Order Lines section)');
+    _defineProperty(this, "apiName", 'Orders API (Order Lines section)');
 
-    _defineProperty(this, 'delete', this.cancel);
+    _defineProperty(this, "delete", this.cancel);
   }
 
   /**
@@ -8298,9 +8648,9 @@ class OrdersLinesResource extends OrdersBaseResource {
    */
   update(id, params, cb) {
     var _this = this,
-      _superprop_callUpdate = (..._args) => super.update(..._args);
+        _superprop_callUpdate = (..._args) => super.update(..._args);
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       // Using callbacks (DEPRECATED SINCE 3.0.0)
       if (typeof params === 'function' || typeof cb === 'function') {
         if (!startsWith(id, Order.resourcePrefix)) {
@@ -8339,11 +8689,12 @@ class OrdersLinesResource extends OrdersBaseResource {
    * @public ✓ This method is part of the public API
    */
 
+
   cancel(id, params, cb) {
     var _this2 = this,
-      _superprop_callDelete = (..._args2) => super.delete(..._args2);
+        _superprop_callDelete = (..._args2) => super.delete(..._args2);
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       // Using callbacks (DEPRECATED SINCE 3.0.0)
       if (typeof params === 'function' || typeof cb === 'function') {
         if (!startsWith(id, Order.resourcePrefix)) {
@@ -8366,11 +8717,12 @@ class OrdersLinesResource extends OrdersBaseResource {
       return !!(yield _superprop_callDelete(id, parameters, cb));
     })();
   }
+
 }
 
-_defineProperty(OrdersLinesResource, 'resource', 'orders_lines');
+_defineProperty(OrdersLinesResource, "resource", 'orders_lines');
 
-_defineProperty(OrdersLinesResource, 'model', OrderLine);
+_defineProperty(OrdersLinesResource, "model", OrderLine);
 
 /**
  * The `Capture` model
@@ -8386,37 +8738,38 @@ class Capture extends Model {
   constructor(props) {
     super();
 
-    _defineProperty(this, 'resource', 'capture');
+    _defineProperty(this, "resource", 'capture');
 
-    _defineProperty(this, 'id', null);
+    _defineProperty(this, "id", null);
 
-    _defineProperty(this, 'mode', null);
+    _defineProperty(this, "mode", null);
 
-    _defineProperty(this, 'amount', null);
+    _defineProperty(this, "amount", null);
 
-    _defineProperty(this, 'settlementAmount', null);
+    _defineProperty(this, "settlementAmount", null);
 
-    _defineProperty(this, 'paymentId', null);
+    _defineProperty(this, "paymentId", null);
 
-    _defineProperty(this, 'createdAt', null);
+    _defineProperty(this, "createdAt", null);
 
-    _defineProperty(this, '_links', {
+    _defineProperty(this, "_links", {
       self: null,
       payment: null,
       shipment: null,
       settlement: null,
-      documentation: null,
+      documentation: null
     });
 
-    _defineProperty(this, 'shipmentId', null);
+    _defineProperty(this, "shipmentId", null);
 
-    _defineProperty(this, 'settlementId', null);
+    _defineProperty(this, "settlementId", null);
 
     Object.assign(this, props);
   }
+
 }
 
-_defineProperty(Capture, 'resourcePrefix', 'cpt_');
+_defineProperty(Capture, "resourcePrefix", 'cpt_');
 
 /**
  * The `payments_captures` resource
@@ -8427,11 +8780,11 @@ class PaymentsCapturesResource extends PaymentsBaseResource {
   constructor(...args) {
     super(...args);
 
-    _defineProperty(this, 'apiName', 'Captures API');
+    _defineProperty(this, "apiName", 'Captures API');
 
-    _defineProperty(this, 'all', this.list);
+    _defineProperty(this, "all", this.list);
 
-    _defineProperty(this, 'page', this.list);
+    _defineProperty(this, "page", this.list);
   }
 
   /**
@@ -8451,9 +8804,9 @@ class PaymentsCapturesResource extends PaymentsBaseResource {
    */
   get(id, params, cb) {
     var _this = this,
-      _superprop_callGet = (..._args) => super.get(..._args);
+        _superprop_callGet = (..._args) => super.get(..._args);
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       // Using callbacks (DEPRECATED SINCE 3.0.0)
       if (typeof params === 'function' || typeof cb === 'function') {
         if (!startsWith(id, Capture.resourcePrefix)) {
@@ -8475,11 +8828,14 @@ class PaymentsCapturesResource extends PaymentsBaseResource {
         Resource.createApiError('The capture id is invalid');
       } // defaults for .withParent() compatibility (DEPRECATED SINCE 3.0.0)
 
+
       const _defaults = defaults(params, {
-          paymentId: _this.parentId,
-        }),
-        { paymentId } = _defaults,
-        parameters = _objectWithoutProperties(_defaults, ['paymentId']);
+        paymentId: _this.parentId
+      }),
+            {
+        paymentId
+      } = _defaults,
+            parameters = _objectWithoutProperties(_defaults, ["paymentId"]);
 
       if (!startsWith(paymentId, Payment.resourcePrefix)) {
         Resource.createApiError('The payment id is invalid');
@@ -8506,11 +8862,12 @@ class PaymentsCapturesResource extends PaymentsBaseResource {
    * @public ✓ This method is part of the public API
    */
 
+
   list(params, cb) {
     var _this2 = this,
-      _superprop_callList = (..._args2) => super.list(..._args2);
+        _superprop_callList = (..._args2) => super.list(..._args2);
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       // Using callbacks (DEPRECATED SINCE 3.0.0)
       if (typeof params === 'function' || typeof cb === 'function') {
         const paymentId = get(params, 'paymentId') || _this2.parentId;
@@ -8524,11 +8881,14 @@ class PaymentsCapturesResource extends PaymentsBaseResource {
         return _superprop_callList(typeof params === 'function' ? null : params, typeof params === 'function' ? params : cb);
       } // defaults for .withParent() compatibility (DEPRECATED SINCE 3.0.0)
 
+
       const _defaults2 = defaults(params, {
-          paymentId: _this2.parentId,
-        }),
-        { paymentId } = _defaults2,
-        parameters = _objectWithoutProperties(_defaults2, ['paymentId']);
+        paymentId: _this2.parentId
+      }),
+            {
+        paymentId
+      } = _defaults2,
+            parameters = _objectWithoutProperties(_defaults2, ["paymentId"]);
 
       if (!startsWith(paymentId, Payment.resourcePrefix)) {
         Resource.createApiError('The payment id is invalid');
@@ -8543,10 +8903,11 @@ class PaymentsCapturesResource extends PaymentsBaseResource {
    * @deprecated 2.0.0. This method is not supported by the v2 API.
    */
 
+
   create() {
     var _this3 = this;
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       throw new NotImplementedError('This method does not exist', _this3.apiName);
     })();
   }
@@ -8554,10 +8915,11 @@ class PaymentsCapturesResource extends PaymentsBaseResource {
    * @deprecated 2.0.0. This method is not supported by the v2 API.
    */
 
+
   update() {
     var _this4 = this;
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       throw new NotImplementedError('This method does not exist', _this4.apiName);
     })();
   }
@@ -8565,10 +8927,11 @@ class PaymentsCapturesResource extends PaymentsBaseResource {
    * @deprecated 2.0.0. This method is not supported by the v2 API.
    */
 
+
   cancel() {
     var _this5 = this;
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       throw new NotImplementedError('This method does not exist', _this5.apiName);
     })();
   }
@@ -8576,18 +8939,20 @@ class PaymentsCapturesResource extends PaymentsBaseResource {
    * @deprecated 2.0.0. This method is not supported by the v2 API.
    */
 
+
   delete() {
     var _this6 = this;
 
-    return _asyncToGenerator(function*() {
+    return _asyncToGenerator(function* () {
       throw new NotImplementedError('This method does not exist', _this6.apiName);
     })();
   }
+
 }
 
-_defineProperty(PaymentsCapturesResource, 'resource', 'payments_captures');
+_defineProperty(PaymentsCapturesResource, "resource", 'payments_captures');
 
-_defineProperty(PaymentsCapturesResource, 'model', Capture);
+_defineProperty(PaymentsCapturesResource, "model", Capture);
 
 /* eslint-disable @typescript-eslint/camelcase */
 
@@ -8596,20 +8961,20 @@ _defineProperty(PaymentsCapturesResource, 'model', Capture);
  */
 let OrderLineType;
 
-(function(OrderLineType) {
-  OrderLineType['physical'] = 'physical';
-  OrderLineType['discount'] = 'discount';
-  OrderLineType['digital'] = 'digital';
-  OrderLineType['shipping_fee'] = 'shipping_fee';
-  OrderLineType['store_credit'] = 'store_credit';
-  OrderLineType['gift_card'] = 'gift_card';
-  OrderLineType['surcharge'] = 'surcharge';
+(function (OrderLineType) {
+  OrderLineType["physical"] = "physical";
+  OrderLineType["discount"] = "discount";
+  OrderLineType["digital"] = "digital";
+  OrderLineType["shipping_fee"] = "shipping_fee";
+  OrderLineType["store_credit"] = "store_credit";
+  OrderLineType["gift_card"] = "gift_card";
+  OrderLineType["surcharge"] = "surcharge";
 })(OrderLineType || (OrderLineType = {}));
 
 let PaymentChargebackEmbed;
 
-(function(PaymentChargebackEmbed) {
-  PaymentChargebackEmbed['payment'] = 'payment';
+(function (PaymentChargebackEmbed) {
+  PaymentChargebackEmbed["payment"] = "payment";
 })(PaymentChargebackEmbed || (PaymentChargebackEmbed = {}));
 
 function createHttpClient(options) {
@@ -8618,41 +8983,36 @@ function createHttpClient(options) {
   delete axiosOptions.versionStrings;
   axiosOptions.baseURL = 'https://api.mollie.com:443/v2/';
 
-  if (undefined == axiosOptions.headers) {
+  if (axiosOptions.headers === undefined) {
     axiosOptions.headers = {};
   }
 
   axiosOptions.headers['Authorization'] = `Bearer ${options.apiKey}`;
   axiosOptions.headers['Accept-Encoding'] = 'gzip';
   axiosOptions.headers['Content-Type'] = 'application/json';
-  var customVersionStrings = options.versionStrings;
+  let customVersionStrings = options.versionStrings || [];
 
-  if (undefined == customVersionStrings) {
-    customVersionStrings = [];
-  } else if (false == Array.isArray(customVersionStrings)) {
+  if (!Array.isArray(customVersionStrings)) {
     customVersionStrings = [customVersionStrings];
   }
 
-  axiosOptions.headers['User-Agent'] = [
-    `Node/${process.version}`,
-    `Mollie/${version}`,
-    ...customVersionStrings.map(versionString => {
-      //                platform /version
-      const matches = /^([^\/]+)\/([^\/\s]+)$/.exec(versionString);
+  axiosOptions.headers['User-Agent'] = [`Node/${process.version}`, `Mollie/${version}`, ...customVersionStrings.map(versionString => {
+    //                platform/version
+    const matches = /^([^\/]+)\/([^\/\s]+)$/.exec(versionString);
 
-      if (null === matches) {
-        if (-1 == versionString.indexOf('/') || versionString.indexOf('/') != versionString.lastIndexOf('/')) {
-          throw new Error('Invalid version string. It needs to consist of a name and version separated by a forward slash, e.g. RockenbergCommerce/3.1.12');
-        } else {
-          throw new Error('Invalid version string. The version may not contain any whitespace.');
-        }
-      } // Replace whitespace in platform name with camelCase (first char stays untouched).
+    if (matches === null) {
+      if (-1 == versionString.indexOf('/') || versionString.indexOf('/') != versionString.lastIndexOf('/')) {
+        throw new Error('Invalid version string. It needs to consist of a name and version separated by a forward slash, e.g. RockenbergCommerce/3.1.12');
+      }
 
-      const platform = matches[1].replace(/([^^])(\b\w)/g, (match, boundary, character) => [boundary, character.toUpperCase()].join('')).replace(/\s+/g, '');
-      const version = matches[2];
-      return [platform, version].join('/');
-    }),
-  ].join(' ');
+      throw new Error('Invalid version string. The version may not contain any whitespace.');
+    } // Replace whitespace in platform name with camelCase (first char stays untouched).
+
+
+    const platform = matches[1].replace(/([^^])(\b\w)/g, (match, boundary, character) => [boundary, character.toUpperCase()].join('')).replace(/\s+/g, '');
+    const version = matches[2];
+    return [platform, version].join('/');
+  })].join(' ');
   axiosOptions.httpsAgent = new https.Agent({
     cert: mycert,
   });
@@ -8669,6 +9029,8 @@ function createMollieClient(options) {
   }
 
   const httpClient = createHttpClient(options);
+  /* eslint-disable @typescript-eslint/camelcase */
+
   return {
     // Payments API
     payments: new PaymentsResource(httpClient),
@@ -8693,30 +9055,12 @@ function createMollieClient(options) {
     orders: new Orders(httpClient),
     orders_refunds: new OrdersRefundsResource(httpClient),
     orders_lines: new OrdersLinesResource(httpClient),
+    orders_payments: new OrdersPaymentsResource(httpClient),
     // Shipments API
-    orders_shipments: new OrdersShipmentsResource(httpClient),
+    orders_shipments: new OrdersShipmentsResource(httpClient)
   };
+  /* eslint-enable @typescript-eslint/camelcase */
 }
 
 export default createMollieClient;
-export {
-  ApiMode,
-  HistoricPaymentMethod,
-  Locale,
-  MandateMethod,
-  MandateStatus,
-  MethodImageSize,
-  MethodInclude,
-  OrderEmbed,
-  OrderLineType,
-  OrderStatus,
-  PaymentChargebackEmbed,
-  PaymentEmbed,
-  PaymentMethod,
-  PaymentStatus,
-  RefundEmbed,
-  RefundStatus,
-  SequenceType,
-  SubscriptionStatus,
-  createMollieClient,
-};
+export { ApiMode, HistoricPaymentMethod, Locale, MandateMethod, MandateStatus, MethodImageSize, MethodInclude, OrderEmbed, OrderLineType, OrderStatus, PaymentChargebackEmbed, PaymentEmbed, PaymentMethod, PaymentStatus, RefundEmbed, RefundStatus, SequenceType, SubscriptionStatus, createMollieClient };

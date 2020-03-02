@@ -11,6 +11,7 @@ import CustomersSubscriptionsResource from './resources/customers/subscriptions'
 import ChargebacksResource from './resources/chargebacks';
 import OrdersShipmentsResource from './resources/orders/shipments';
 import OrdersRefundsResource from './resources/orders/refunds';
+import OrdersPaymentsResource from './resources/orders/payments';
 import OrdersResource from './resources/orders';
 import OrdersLinesResource from './resources/orders/lines';
 import PaymentsCapturesResource from './resources/payments/captures';
@@ -22,7 +23,7 @@ export interface MollieOptions extends AxiosRequestConfig {
     /**
      * One or an array of version strings of the software you are using, such as `'RockenbergCommerce/3.1.12'`.
      */
-    versionStrings?: string | Array<string>;
+    versionStrings?: string | string[];
 }
 export interface MollieClient {
     payments: PaymentsResource;
@@ -40,6 +41,7 @@ export interface MollieClient {
     orders_refunds: OrdersRefundsResource;
     orders_lines: OrdersLinesResource;
     orders_shipments: OrdersShipmentsResource;
+    orders_payments: OrdersPaymentsResource;
 }
 /**
  * Create Mollie client.

@@ -202,7 +202,7 @@ export interface ICreateParams {
     consumerAccount?: string;
     voucherNumber?: string;
     voucherPin?: string;
-    include?: Array<PaymentInclude> | PaymentInclude;
+    include?: PaymentInclude[] | PaymentInclude;
     profileId?: string;
     testmode?: boolean;
     applicationFee?: {
@@ -226,7 +226,7 @@ export interface ICreateParams {
  */
 export interface IGetParams {
     include?: PaymentInclude;
-    embed?: Array<PaymentEmbed> | PaymentEmbed;
+    embed?: PaymentEmbed[] | PaymentEmbed;
     testmode?: boolean;
 }
 /**

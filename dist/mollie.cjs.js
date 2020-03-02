@@ -3446,7 +3446,7 @@ dBb9HxEGmpv0
 -----END CERTIFICATE-----
 `;
 
-var version = "3.0.0";
+var version = "3.1.0";
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
   try {
@@ -4578,7 +4578,7 @@ class Resource {
   static createApiError(responseOrMessage, cb) {
     // This method is essentially a thin wrapper around either the ApiError constructor or ApiError.createFromResponse.
     // When we implement a more generic solution for the callbacks, I think this method becomes obsolete.
-    var error;
+    let error;
 
     if (typeof responseOrMessage == 'string') {
       error = new ApiError(responseOrMessage);
@@ -7960,6 +7960,136 @@ _defineProperty(OrdersRefundsResource, "resource", 'orders_refunds');
 _defineProperty(OrdersRefundsResource, "model", Refund);
 
 /**
+ * The `orders_payments` resource
+ *
+ * @since 3.1.0
+ */
+class OrdersPaymentsResource extends OrdersBaseResource {
+  constructor(...args) {
+    super(...args);
+
+    _defineProperty(this, "apiName", 'Orders API (Order Payment section)');
+  }
+
+  /**
+   * Create order payment
+   *
+   * @param params - Create order payment parameters
+   *                 (DEPRECATED SINCE 3.0.0) Can also be a callback function
+   * @param cb - (DEPRECATED SINCE 3.0.0) Callback function, can be used instead of the returned `Promise` object
+   *
+   * @returns The created Payment object
+   *
+   * @since 3.1.0
+   *
+   * @see https://docs.mollie.com/reference/v2/orders-api/create-order-payment
+   *
+   * @public ✓ This method is part of the public API
+   */
+  create(params, cb) {
+    var _this = this,
+        _superprop_callCreate = (..._args) => super.create(..._args);
+
+    return _asyncToGenerator(function* () {
+      // Using callbacks (DEPRECATED SINCE 3.0.0)
+      if (typeof params === 'function' || typeof cb === 'function') {
+        const orderId = lodash.get(params, 'orderId') || _this.parentId;
+
+        if (!lodash.startsWith(orderId, Order.resourcePrefix)) {
+          Resource.createApiError('The order id is invalid', typeof params === 'function' ? params : cb);
+        }
+
+        _this.setParentId(orderId);
+
+        return _superprop_callCreate(typeof params === 'function' ? null : params, typeof params === 'function' ? params : cb);
+      } // defaults for .withParent() compatibility (DEPRECATED SINCE 3.0.0)
+
+
+      const _defaults = lodash.defaults(params, {
+        orderId: _this.parentId
+      }),
+            {
+        orderId
+      } = _defaults,
+            parameters = _objectWithoutProperties(_defaults, ["orderId"]);
+
+      if (!lodash.startsWith(orderId, Order.resourcePrefix)) {
+        Resource.createApiError('The order id is invalid', cb);
+      }
+
+      _this.setParentId(orderId);
+
+      return _superprop_callCreate(parameters, cb);
+    })();
+  }
+  /**
+   * @deprecated 2.0.0. This method is not supported by the v2 API.
+   */
+
+
+  list() {
+    var _this2 = this;
+
+    return _asyncToGenerator(function* () {
+      throw new NotImplementedError('This method does not exist', _this2.apiName);
+    })();
+  }
+  /**
+   * @deprecated 2.0.0. This method is not supported by the v2 API.
+   */
+
+
+  get() {
+    var _this3 = this;
+
+    return _asyncToGenerator(function* () {
+      throw new NotImplementedError('This method does not exist', _this3.apiName);
+    })();
+  }
+  /**
+   * @deprecated 2.0.0. This method is not supported by the v2 API.
+   */
+
+
+  update() {
+    var _this4 = this;
+
+    return _asyncToGenerator(function* () {
+      throw new NotImplementedError('This method does not exist', _this4.apiName);
+    })();
+  }
+  /**
+   * @deprecated 2.0.0. This method is not supported by the v2 API.
+   */
+
+
+  delete() {
+    var _this5 = this;
+
+    return _asyncToGenerator(function* () {
+      throw new NotImplementedError('This method does not exist', _this5.apiName);
+    })();
+  }
+  /**
+   * @deprecated 2.0.0. This method is not supported by the v2 API.
+   */
+
+
+  cancel() {
+    var _this6 = this;
+
+    return _asyncToGenerator(function* () {
+      throw new NotImplementedError('This method does not exist', _this6.apiName);
+    })();
+  }
+
+}
+
+_defineProperty(OrdersPaymentsResource, "resource", 'orders_payments');
+
+_defineProperty(OrdersPaymentsResource, "model", Payment);
+
+/**
  * The `orders` resource
  *
  * @since 3.0.0
@@ -8596,31 +8726,29 @@ function createHttpClient(options) {
   delete axiosOptions.versionStrings;
   axiosOptions.baseURL = 'https://api.mollie.com:443/v2/';
 
-  if (undefined == axiosOptions.headers) {
+  if (axiosOptions.headers === undefined) {
     axiosOptions.headers = {};
   }
 
   axiosOptions.headers['Authorization'] = `Bearer ${options.apiKey}`;
   axiosOptions.headers['Accept-Encoding'] = 'gzip';
   axiosOptions.headers['Content-Type'] = 'application/json';
-  var customVersionStrings = options.versionStrings;
+  let customVersionStrings = options.versionStrings || [];
 
-  if (undefined == customVersionStrings) {
-    customVersionStrings = [];
-  } else if (false == Array.isArray(customVersionStrings)) {
+  if (!Array.isArray(customVersionStrings)) {
     customVersionStrings = [customVersionStrings];
   }
 
   axiosOptions.headers['User-Agent'] = [`Node/${process.version}`, `Mollie/${version}`, ...customVersionStrings.map(versionString => {
-    //                platform /version
+    //                platform/version
     const matches = /^([^\/]+)\/([^\/\s]+)$/.exec(versionString);
 
-    if (null === matches) {
+    if (matches === null) {
       if (-1 == versionString.indexOf('/') || versionString.indexOf('/') != versionString.lastIndexOf('/')) {
         throw new Error('Invalid version string. It needs to consist of a name and version separated by a forward slash, e.g. RockenbergCommerce/3.1.12');
-      } else {
-        throw new Error('Invalid version string. The version may not contain any whitespace.');
       }
+
+      throw new Error('Invalid version string. The version may not contain any whitespace.');
     } // Replace whitespace in platform name with camelCase (first char stays untouched).
 
 
@@ -8644,6 +8772,8 @@ function createMollieClient(options) {
   }
 
   const httpClient = createHttpClient(options);
+  /* eslint-disable @typescript-eslint/camelcase */
+
   return {
     // Payments API
     payments: new PaymentsResource(httpClient),
@@ -8668,9 +8798,11 @@ function createMollieClient(options) {
     orders: new Orders(httpClient),
     orders_refunds: new OrdersRefundsResource(httpClient),
     orders_lines: new OrdersLinesResource(httpClient),
+    orders_payments: new OrdersPaymentsResource(httpClient),
     // Shipments API
     orders_shipments: new OrdersShipmentsResource(httpClient)
   };
+  /* eslint-enable @typescript-eslint/camelcase */
 }
 
 exports.createMollieClient = createMollieClient;

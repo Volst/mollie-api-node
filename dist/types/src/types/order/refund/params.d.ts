@@ -14,7 +14,7 @@
 import { IRequestOrderLine } from '../line';
 export interface ICreateParams {
     orderId: string;
-    lines: Array<IRequestOrderLine>;
+    lines: IRequestOrderLine[];
     description?: string;
     testmode?: boolean;
 }

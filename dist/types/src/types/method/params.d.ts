@@ -15,7 +15,7 @@ import { MethodInclude } from '../method';
  */
 export interface IGetParams {
     locale?: Locale;
-    include?: Array<MethodInclude> | MethodInclude;
+    include?: MethodInclude[] | MethodInclude;
     profileId?: string;
     testmode?: boolean;
 }
@@ -58,7 +58,7 @@ export interface IListParams {
     amount?: IAmount;
     resource?: string;
     billingCountry?: string;
-    include?: Array<MethodInclude> | MethodInclude;
+    include?: MethodInclude[] | MethodInclude;
     profileId?: string;
     testmode?: boolean;
 }
