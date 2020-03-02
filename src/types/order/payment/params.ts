@@ -29,8 +29,8 @@ import { IAmount, PaymentMethod } from '../../global';
 export interface ICreateParams {
   orderId: string;
 
-  method?: PaymentMethod | Array<PaymentMethod>;
-  customerId: string;
+  method?: PaymentMethod | PaymentMethod[];
+  customerId?: string;
   mandateId?: string;
 
   // Access token parameters
